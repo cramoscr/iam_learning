@@ -1,0 +1,76 @@
+ToDo_Python.txt
+-----------
+Updated: cramos 07/jun/2022
+
+Esto son apuntes tomados mientras voy leyendo el libro
+Python Crash Course...
+
+[ ] Debo ir a revisar el sitio oficial de Python al menos
+    una vez cada trimestre
+
+[ ] ToDo's (labs que tengo que hacer)
+    [x] Functions with arguments and parameters
+    [ ] Ternary operators
+    [ ] Calling py scripts with parameters (args[])
+    [ ] Catching Exceptions
+    [ ] Interactions with the O.S. (filesystem, printers, etc)
+    [ ] Organizar un projecto en varios archivos (modulos)
+    [ ] Tuples, Dict, arrays
+    
+[ ] Cosas que _no_ había entendido... 
+    + Los objetos tipo List son mutables y entonces cuando
+      se asigna una variable a otra: 
+           x = w
+      resulta que en realidad x y w apuntan al mismo contenido !!!
+
+        >>> x = []
+            y = x
+            y.append(10)
+
+            print(y)        
+            print(x)       : x "contiene" lo mismo que y !!!!
+
+      Esto no pasa por ejemplo con variables tipo "int" que
+      son INMUTABLES 
+      ( x = y, el contenido de y se copia hacia x )
+
+    + 
+
+
+[ ] https://www.python.org/
+      + Coding Style Guide   [ PEP-0008 ]
+
+          https://peps.python.org/pep-0008/
+
+      + Reference
+          https://docs.python.org/3/
+
+          - Cosa Util: RegExp howto
+              https://docs.python.org/3/howto/regex.html
+ 
+          - Cosa Util: Logging Cookbok
+          - Cosa Util: Socket howto
+          - Cosa Util: Programmit FAQ
+               * Coding style guide
+               * Static debugging
+               * Differencies between Arguments vs Parameters
+
+      + Jobs
+          https://www.python.org/jobs/
+
+      + Use Python for:
+          Web Development :
+                Django, Pyramid, Bottle, Tornado, Flask, web2py
+          GUI Development :
+                tkInter, PyGObject, PyQt, PySide, Kivy, wxPython
+                [ NuitKa, PyInstaller, PyOxidizer py2exe, py2app ]
+          Scientific and Numeric :
+                SciPy, Pandas, IPyThon
+          Software Development :
+                Buildbot, Trac, Roundup
+          System Administration :
+                Ansible, Salt, OpenStack, xonsh
+                
+      + 
+
+- 
