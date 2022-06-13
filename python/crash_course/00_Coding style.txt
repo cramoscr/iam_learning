@@ -31,7 +31,17 @@
          > Use blank lines in functions, sparingly, to indicate logical 
            sections.
 
-+ 
++ Classes:
+    - Class name should: 
+         CamelCase, not using underscore
+         Includes docstring with a brief description of the 
+    
+    - Instance name should:
+         lower case, words separated by underscore
+
+    - Module name should:
+         lower case, words separated by underscore
+         Includes docstring with a brief description of the Module
 
 + 
 
