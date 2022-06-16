@@ -31,10 +31,10 @@ class AlienInvasion:
 
 		# Bullet settings
 		self.bullet_speed = 1.0
-		self.bullet_width = 3
-		self.bullet_height = 15
+		self.bullet_width = 3        # n pixels
+		self.bullet_height = 15      # n pixels
 		self.bullet_color = (60, 60, 60)
-		 
+
 	def run_game(self):
 		"""Start the main loop for the game"""
 
