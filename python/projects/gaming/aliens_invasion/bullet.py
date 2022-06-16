@@ -4,7 +4,7 @@
 # Based on PythonCrashCourse book (page 247)
 
 import pygame
-from pygrame.sprite import Sprite
+from pygame.sprite import Sprite
 
 class Bullet(Sprite):
 	""" A class to manage bullets fired from the ship """
@@ -22,7 +22,7 @@ class Bullet(Sprite):
 			self.settings.bullet_height)
 
 		# Aligning the bullet center to the ship's mid position
-		self.rect.mindtop = ai_game.ship.rect.midtop
+		self.rect.midtop = ai_game.ship.rect.midtop
 
 		# Store the bullet's position as a decimal value
 		self.y = float(self.rect.y)
@@ -32,7 +32,7 @@ class Bullet(Sprite):
 		# Update the decimal position of the bullet
 		self.y -= self.settings.bullet_speed
 		# Update the rect position
-		self.rect.y = self.pygame
+		self.rect.y = self.y
 
 	def draw_bullet(self):
 		""" Draw the bullet to the screen """
