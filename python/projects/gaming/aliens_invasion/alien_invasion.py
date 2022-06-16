@@ -1,6 +1,5 @@
 # alien_invasion.py
 # Updated: cramos 12/jun/2022
-
 # Based on PythonCrashCourse book (page 229)
 
 import sys
@@ -26,6 +25,8 @@ class AlienInvasion:
 
 		self.ship = Ship(self)
 
+		self.bullets = pygame.sprite.Group()
+
 		# Set the background color
 		self.bg_color = (230, 230, 230)
 
@@ -41,6 +42,7 @@ class AlienInvasion:
 		while True:
 			self._check_events()
 			self.ship.update()
+			self.bullets.update()
 			self._update_screen()
 
 	def _check_events(self):
