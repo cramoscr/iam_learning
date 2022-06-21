@@ -1,4 +1,5 @@
 # bullet.py
+# ---------------
 # Updated: cramos 15/jun/2022
 # This is part of the AliensInvasion project
 # Based on PythonCrashCourse book (page 247)

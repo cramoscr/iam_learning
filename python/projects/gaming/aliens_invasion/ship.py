@@ -1,4 +1,5 @@
 # ship.py
+# ------------
 # Updated: cramos 12/jun/2022
 # This is part of the AliensInvasion project
 # Based on PythonCrashCourse book (page 229)
@@ -41,5 +42,10 @@ class Ship:
 	def blitme(self):
 		""" Draw the ship at its currect location """
 		self.screen.blit(self.image, self.rect)
+
+	def center_ship(self):
+		""" Center the ship on the screen """
+		self.rect.midbottom = self.screen_rect.midbottom
+		self.x = float(self.rect.x)
 
 
