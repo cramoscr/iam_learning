@@ -19,8 +19,8 @@ class Settings:
 
 		# Bullet settings
 		self.bullet_speed = 1.5
-		self.bullet_width = 300      # n pixels
-		self.bullet_height = 15      # n pixels
+		self.bullet_width = 5      # n pixels
+		self.bullet_height = 25      # n pixels
 		self.bullet_color = (60, 60, 60)
 		self.bullets_allowed = 3
 
