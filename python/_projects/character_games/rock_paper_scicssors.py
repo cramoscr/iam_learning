@@ -47,6 +47,7 @@ comp_opt =  random.randint(0,2)
 print(f'Computer choice: {comp_opt} \n {symbols[comp_opt]}')
 
 if    my_opt == 0 and comp_opt == 0:
+    
 	print(f'Empate en Rock !')
 elif my_opt == 0 and comp_opt == 1:
 	print(f'You loose :(')
