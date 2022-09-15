@@ -15,8 +15,8 @@ Luckily, there are great learning resources that provide
 really funny, engaging and relevant labs.
 
 Here you will find two types of code snippets:
-  a. Small exercises produced when attending the courses
-  b. Projects with more complexity level
+  - Small exercises produced when attending the courses
+  - Projects with more complexity level
 
 I hope this will inspire you on your learning journey.
 
