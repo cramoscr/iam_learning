@@ -1,21 +1,23 @@
 # My_Learning
-Programming exercises I did during my learning path.
+These are examples of programming exercises created during
+my learning process.
 
-As a programmer who started with Basic and Pascal, I am trying 
-to keep current with new programming languages and software
-development frameworks.
+As a programmer who started with Basic and Pascal (thousand
+of years ago), I am doing my job of trying to keep current 
+with new programming languages and development frameworks.
 
 I will be mainly focused on mastering:
   - Python
   - Flutter
   - ReactJS
 
-There are no promises, just a commitment to keep learning.
+Luckily, there are great learning resources that provide 
+really funny, engaging and relevant labs.
 
-I will be producing two kind of files:
+Here you will find two types of code snippets:
   a. Small exercises produced when attending the courses
   b. Projects with more complexity level
 
-I hope this will inspire you on your own learning journey.
+I hope this will inspire you on your learning journey.
 
 Carlos.
