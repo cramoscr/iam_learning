@@ -20,7 +20,7 @@ screen.setup(width=600, height=500)
 
 # Step 2 - Asking the user
 user_bet = screen.textinput(title="Make your Bet... ", prompt="Which color will win ? :")
-print(f'User_bet: {user_bet}')
+print(f'Your choice: {user_bet}')
 
 
 # Step 3 - Dealing with turtles initial position

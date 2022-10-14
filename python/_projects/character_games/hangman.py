@@ -2,7 +2,9 @@
 # -------
 # Updated: cramos 09/ago/2022
 # Based on TheLondonApp Brewery 100DaysOfPython
-    
+
+import os 
+
 import random
 
 stages = ['''
@@ -63,15 +65,14 @@ stages = ['''
 ''']
 
 end_of_game = False
-word_list = ["ardvark", "baboon", "camel"]
+word_list = ["anything", "happy", "treasure", "rock&roll", "camel", "elephant", "biggest"]
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
 lives = 6
 
-
 #Testing code
-#print(f'Pssst, the solution is {chosen_word}.')
+#print(f'Pssst, the solution is {chossen_word}.')
 
 #Create blanks
 display = []
@@ -79,6 +80,7 @@ for _ in range(word_length):
     display += "_"
 
 while not end_of_game:
+    print(f'\n Welcome to the Hangman Game \n') 
     print(f'Lives: {lives}')
 
     guess = input("Guess a letter: ").lower()
@@ -107,5 +109,5 @@ while not end_of_game:
         end_of_game = True
         print("You win.")
 
+    os.system('cls')
     print(stages[lives])
-

@@ -2,16 +2,20 @@
 # ----------------
 # Updated: cramos 12/ago/2022
 
+import os 
+
 from bidder_logo import logo
 
 offers = {}
 
 while True:
-	#clear()
+	# Clear the screen
+	os.system('cls')
+	
 	print(f'Welcome to Auction Simulator')
 	print(logo)
 
-	answer = input('Do you want to add an offer [s/n] ? ');
+	answer = input('Do you want to add an offer [y/n] ? ');
 
 	if answer == 'n':
 		break
