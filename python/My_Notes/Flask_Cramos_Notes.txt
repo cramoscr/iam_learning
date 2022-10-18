@@ -1,0 +1,30 @@
+Flask_Cramos_Notes.txt
+------------------
+Updated: cramos 10/oct/2022
+
+Apuntes "sueltos" de lo que voy aprendiendo sobre Flask.
+
+[ ] Primer acercamiento
+
+    + Curso de Angela Yu : 100DaysofCode
+
+    + https://flask.palletsprojects.com/en/1.1.x/quickstart/
+
+
+
+[ ] Primero conceptos
+    
+    + Flask es tecnología de BACKEND
+
+[ ] Flask debugger
+
+    + Ver Episodio 453 de 100DaysofPython
+        "Working with Flask URL and Flask Debugger"
+
+    + Básicamente, se activa dentro del código con
+         xxxx
+
+      Luego, en el URL, cuando se cae, en la fila donde
+      se muestra el error, aparece un icono para entrar al 
+      debugger
+          

@@ -1,0 +1,44 @@
+Git_Notas (oct-2022).txt
+--------------------
+Updated: cramos 14/oct/2022
+
+
+[ ] Clonar un repositorio existente
+
+
+    c:\_my_labs\
+
+       --Instala el branch "My_Learning" dentro del folder "My_Repo"
+
+        git clone https://github.com/cramoscr/My_Learning.git My_Repo    
+
+
+[ ] Configurar entorno de Git
+
+       git config --local user.name "carlos.ramos"
+       git config --local user.email "cramoscr@gmail.com"
+
+       git config --global user.name "carlos.ramos"
+       git config --global user.email "cramoscr@gmail.com"
+
+       git config --list
+
+[ ] Enviar cambios
+
+      -- En la carpeta donde hay cambios: "git add ."
+
+      C:\_My_SoftDev\My_Learning\python> git add .
+
+      
+      -- Para ver los cambios
+
+      git show
+
+      -- Para commitear
+
+      git commit -m "Reorganización de carpetas"
+
+      git push
+
+      
+
