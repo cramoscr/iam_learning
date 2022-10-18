@@ -23,9 +23,19 @@ def produceFact(pLabel):
 	print(f" {pLabel.upper()}. {vDictionary['name']}  [ {vDictionary['country']} - {vDictionary['description']} ] >> {vDictionary['follower_count']} ")
 	return int(vDictionary['follower_count'])
 
+def chechAnswer(pChoice, pFollowersA, pFollowersB):
+	""" Checks if the user guesses the correct answer """
+	if (pFollowersA > pFollowersB):
+		return pChoice == "a"
+	else:
+		return pChoice == "b"
+
+	return False
+
 
 # Section 3 - Main loop
 
+vScore = 0
 vDict = {}
 
 while True:
@@ -35,35 +45,31 @@ while True:
 	print(logo_img)
 
 	# Choose the first data (called A)
-	vAnswerA = produceFact('A')
+	vFollowersA = produceFact('A')
 
 	print(vs_img)
 
 	# Choose the second data (called B)
-	vAnswerB = produceFact('B')
+	vFollowersB = produceFact('B')
 
 	while True:
 		vChoice = input('\n Which one have more followers A or B ? (enter Q to exit): ')
-		vChoice = vChoice.upper()
+		vChoice = vChoice.lower()
 
 		if vChoice.lower() in ['a', 'b', 'q']:
 			break
 
-	# Exit when answer is Q
-	if vChoice.upper() == "Q":
+	# Exit when answer is "q"
+	if vChoice.lower() == "q":
 		break
 
-
-	vWin = False
-	if ((vChoice == 'A') and (vAnswerA > vAnswerB)):
-		vWin = True
-
-	if ((vChoice == 'B') and (vAnswerB > vAnswerA)):
-		vWin = True
-
-	if vWin:
+	# Check if the user answer is right of wrong
+	if chechAnswer(vChoice, vFollowersA, vFollowersB):
+		vScore += 1
 		print(win_img)
 	else:
 		print(loose_img)
+
+	print(f"You current score: [ {vScore} ]")
 
 	input('Press ENTER to continue...')

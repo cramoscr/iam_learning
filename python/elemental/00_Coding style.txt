@@ -43,6 +43,12 @@
          lower case, words separated by underscore
          Includes docstring with a brief description of the Module
 
++ Constants
+     Constant names should be writed in UPPERCASE
+
+     Examples:
+         PI = 3.1414
+         
 + Functions:
      xxxx
 
