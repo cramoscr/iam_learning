@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return "<h1 style='text-align: center'>Hello, World!</h1>" \
-           "<p>This is a paragraph.</p>" \
+           "<p>This is a Paragraph tag.</p>" \
            "<img src='https://media.giphy.com/media/hvS1eKlR75hMr0l7VJ/giphy.gif'>"
 
 
