@@ -1,0 +1,40 @@
+Python_Resources.txt
+----------------
+Updated: cramos 18/oct/2022
+
+[ ] Python Debugger
+    
+    + Online debugger:
+          https://pythontutor.com/
+
+
+    + PyCharm IDE has an integrated debugger
+
+[ ] Pyhton on-line editor
+
+    + Replit.com
+
+        https://replit.com/@appbrewery/day-13-1-exercise
+
+        Lovely because can be our personal code repository for
+        showing up our working code samples
+
+        It's a:
+           on-line editor 
+           on-line debugger
+           code repository
+
+    +  
+
+    + 
+
+[ ] Funny elemental programming tutorial
+    
+    + Reeborg's World
+
+      It's a kind of Micromundos tutorial...
+      
+        https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%202&url=worlds%2Ftutorial_en%2Fhurdle2.json
+
+
+

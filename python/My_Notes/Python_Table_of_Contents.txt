@@ -1,0 +1,63 @@
+Python_Table_of_Contents.txt
+------------------------
+Updated: cramos 18/oct/2022
+
+Description:
+   This document presents and structured list of Python's
+   principal matters
+
+Basado en:
+   https://www.w3schools.com/python/default.asp
+
+[ ] Python Syntax
+[ ] Python install / Tooling
+      + PIP
+      + PyCharm
+[ ] Python Comments
+[ ] Python Variables
+[ ] Python Data Types
+[ ] Python Numbers
+[ ] Python Strings
+      + 
+      + String formating
+[ ] Python Date
+[ ] Python Booleans
+[ ] Python Operators
+[ ] Python data structures:
+      + Lists
+      + Tuples
+      + Sets
+      + Dictionaries
+      + Arrays
+[ ] Python If..Else
+[ ] Python Loops
+      + While Loops
+      + For Loops
+      + Iterators
+[ ] Python Functions
+[ ] Python Lambda
+[ ] Python OOP
+      + Classes / Objects
+      + Inheritance
+      + 
+[ ] Python Scope
+[ ] Python Try..Except
+[ ] User input
+[ ] Python Libraries / Modules
+      + RegEx
+      + JSON
+        ---------
+      + Math
+      + Random
+      + Requests
+        ---------
+      + Turtle
+      + MatPlot
+        ---------
+      + NumPy      
+      + Pandas
+      + SciPy
+        ---------
+      + Django
+      + Flask
+

@@ -1,4 +1,4 @@
-#turtle_randompath.py
+# turtle_randompath.py
 # -----------------
 # Updated: cramos 20/ago/2022
 # Small Turtle project.

@@ -1,0 +1,71 @@
+Python_My_Reference.txt
+-------------------
+Updated: cramos 18/oct/2022
+
+This is an un-organized repository of snipped chuncks of text
+related to Python concepts
+
+
+*********** Data Structures ***************
+
+[  ] Dictionary
+       + Dictionaries are used to store data values in key:value pairs.
+       + A dictionary is a collection which is:
+              ordered*, 
+              changeable 
+              do not allow duplicates
+
+              * In Python 3.6 and earlier, dictionaries are unordered.
+
+       + Creation:
+            my_dict = {
+                "brand": "Ford",
+                "model": "Mustang",
+                "year": 1964
+            }
+
+       + Operations:
+            Access:
+               print( my_dict["model"] )
+
+            Change:
+               my_dict["model"] = "Camaro"
+
+            Add item:
+               my_dict["color"] = "red"
+
+            Remove item:
+               my_dict.pop("model")
+
+            Copy:
+               my_other = my_dict.copy()
+
+            Iterate:
+               for x in thisdict:
+                  print(x)
+
+               for x in thisdict.values():
+                  print(x)
+
+               for x in thisdict.keys():
+                  print(x)
+
+               for x, y in thisdict.items():
+                  print(x, y)
+
+       + Methods
+            clear()      : Removes all the elements from the dictionary
+            copy()       : Returns a copy of the dictionary
+            fromkeys()   : Returns a dictionary with specified keys and value
+            get()        : Returns the value of the specified key
+            items()      : Returns a list containing a tuple for each key value pair
+            keys()       : Returns a list containing the dictionary's keys
+            pop()        : Removes the element with the specified key
+            popitem()    : Removes the last inserted key-value pair
+            setdefault() : Returns the value of the specified key. If the key does 
+                           not exist: insert the key, with the specified value
+            update()     : Updates the dictionary with the specified key-value pairs
+            values()     : Returns a list of all the values in the dictionary
+
+
+
