@@ -2,6 +2,16 @@ Python_Resources.txt
 ----------------
 Updated: cramos 18/oct/2022
 
+[ ] HTML templates
+    
+    + This templates are free and can be easily integrated
+      into Flask development:
+
+         https://html5up.net/
+
+      I used this on "My_Card" Flask project
+         https://html5up.net/miniport
+
 [ ] Python Debugger
     
     + Online debugger:
