@@ -46,5 +46,18 @@ Updated: cramos 18/oct/2022
       
         https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%202&url=worlds%2Ftutorial_en%2Fhurdle2.json
 
+[ ] Useful public API's
+
+    + Predict the gender of people, based on it's name
+
+         https://genderize.io/
+
+         https://api.genderize.io/?name=carlos
 
 
+    + Predict the AGE of people, based on it's name
+
+         https://api.agify.io/?name=carlos
+
+
+         

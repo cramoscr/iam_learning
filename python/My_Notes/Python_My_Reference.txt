@@ -5,6 +5,25 @@ Updated: cramos 18/oct/2022
 This is an un-organized repository of snipped chuncks of text
 related to Python concepts
 
+*********** Python Install ****************
+
+[ ] Ubuntu 20.10 - Python install
+
+    Step 1.
+    
+       $ sudo apt update
+
+       $ sudo apt install python3
+    
+       $ python3 --version
+       
+    Step 2.
+    
+       $ sudo apt install python3-pip
+           o bien
+       $ sudo apt install pip
+
+       $ pip3 --version       
 
 *********** Data Structures ***************
 

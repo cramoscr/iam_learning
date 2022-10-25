@@ -1,0 +1,29 @@
+Flutter_Cramos_Notes.txt
+--------------------
+Updated: cramos 21/oct/2022
+
+[ ] Install on Ubuntu 20.x
+
+    [ ] Step A. Install Flutter library
+
+        Option 1. Using snap
+    
+           Desde Chrome:
+              https://snapcraft.io/install/flutter/ubuntu
+
+           Desde terminal:
+              $ sudo apt update
+              $ sudo apt install snapd
+          
+              $ sudo snap install flutter --classic
+  
+              $ flutter doctor
+
+
+        Option 2. Manual installation
+
+
+    [ ] Step 2. Install Android studio 
+
+        Download -> Chrome
+           https://developer.android.com/studio
