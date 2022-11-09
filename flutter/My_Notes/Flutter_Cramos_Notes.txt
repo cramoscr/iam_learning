@@ -25,5 +25,34 @@ Updated: cramos 21/oct/2022
 
     [ ] Step 2. Install Android studio 
 
-        Download -> Chrome
+        Download
            https://developer.android.com/studio
+        
+        Guía:
+           https://linuxhint.com/install-android-studio-ubuntu22-04/
+
+        Step 1: Install JDK
+           sudo apt install openjdk-11-jdk
+
+        Step 2: Verify installation
+           java --version
+
+        Step 3: Add android-studio repository
+           sudo add-apt-repository ppa:maarten-fonville/android-studio
+
+        Step 4: Update system
+           sudo apt update
+
+        Step 5: Install the app
+           sudo apt install android-studio -y
+
+           or
+
+           sudo snap install android-studio --classic
+
+
+   [ ] Remove Android Studio
+
+       sudo snap remove android-studio
+
+

@@ -2,6 +2,23 @@ Python_Resources.txt
 ----------------
 Updated: cramos 18/oct/2022
 
+[ ] Quick 
+      
+      https://www.geeksforgeeks.org/python-programming-language/?ref=ghm
+
+      The biggest strength of Python is huge collection of standard library 
+      which can be used for the following:
+         - Machine Learning
+         - GUI Applications (like Kivy, Tkinter, PyQt etc. )
+         - Web frameworks like Django (used by YouTube, Instagram, Dropbox)
+         - Image processing (like OpenCV, Pillow)
+         - Web scraping (like Scrapy, BeautifulSoup, Selenium)
+         - Test frameworks
+         - Multimedia
+         - Scientific computing
+         - Text processing 
+           and more..
+
 [ ] HTML templates
     
     + This templates are free and can be easily integrated
@@ -12,6 +29,46 @@ Updated: cramos 18/oct/2022
       I used this on "My_Card" Flask project
          https://html5up.net/miniport
 
+[ ] nPoint.io
+    
+    https://www.npoint.io/
+
+    + Permite crear datos super-rapido (formato JSON) y
+      hacerlos accesibles de inmediato mediante un API
+
+    + No hay que matricularse, ni hacer nada complicado
+      para lograr que los datos sean consumibles mediante
+      un API
+    
+    + Ejemplo:
+
+         https://www.npoint.io/docs/c790b4d5cab58020d391
+
+         [
+           {
+             "id": 1,
+             "title": "The Life of Cactus",
+             "subtitle": "Who knew that cacti lived such interesting lives.",
+             "body": "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify."
+           },
+           {
+             "id": 2,
+             "title": "Top 15 Things to do When You are Bored",
+             "subtitle": "Are you bored? Don't know what to do? Try these top 15 activities.",
+             "body": "Chase ball of string eat plants, meow, and throw up because I ate plants going to catch the red dot today going to catch the red dot today. I could pee on this if I had the energy. Chew iPad power cord steal the warm chair right after you get up for purr for no reason leave hair everywhere, decide to want nothing to do with my owner today."
+           },
+           {
+             "id": 3,
+             "title": "Introduction to Intermittent Fasting",
+             "subtitle": "Learn about the newest health craze.",
+             "body": "Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."
+           }
+         ]
+
+
+       This bin is available at https://api.npoint.io/c790b4d5cab58020d391
+
+       
 [ ] Python Debugger
     
     + Online debugger:

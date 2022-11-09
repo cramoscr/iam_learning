@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blog Page - Cramos</title>
+</head>
+
+<body>
+
+    <h1> This is the Body </h1>
+
+	{% for blog_post in pBlog_posts: %}
+	
+       {% if blog_post["id"] == 2 %}
+          <h2 style="color:DodgerBlue;"> Blog Title: {{ blog_post["title"] }} </h2>
+       {% else %}
+          <h2> Blog Title: {{ blog_post["title"] }} </h2>       
+       {% endif %}
+
+       <h3> Blog SubTitle: {{ blog_post["subtitle"] }} </h3>
+       <h4> Blog Body: {{ blog_post["body"] }} </h4>
+    {% endfor %}
+
+</body>
+
+<footer>
+	<h5> This is the page footer </h5>
+</footer>
+
+</html>

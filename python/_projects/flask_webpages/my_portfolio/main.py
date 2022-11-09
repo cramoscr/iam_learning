@@ -14,7 +14,7 @@
 #          set FLASK_APP=main.py
 #          python -m flask run
 #       Option B.
-#          python my_portfolio.py
+#          python main.py
 
 from flask import Flask, render_template
 

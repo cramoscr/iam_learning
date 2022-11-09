@@ -1,0 +1,69 @@
+Bootstrap5_My_Notes.txt
+-------------------
+Updated: cramos 31/oct/2022
+
+[ ] Bootstrap overview
+
+    + Bootstrap was originally created by Twitter
+
+    + Provides UI (front-end) resources for web development.
+
+    + Can be used in a web page:
+        a. Referencing  a CDN repository
+        b. Downloading the CSS and JS files and including them
+           into the web page source folder
+           
+    + For SaaS purposes, can be installed on a server by using
+          npm
+          gem
+
+[ ] Bootstrap 4 vs 5
+
+    https://www.geeksforgeeks.org/difference-between-bootstrap-4-and-bootstrap-5/
+
+[ ] Resources
+
+    + Codeply
+         https://www.codeply.com/
+      
+      On-line editor for
+         Bootstrap 4, 5, etc.
+         VUE
+         React
+
+    + Bootstrap
+         https://getbootstrap.com/
+ 
+    + Dribble
+         https://dribbble.com/
+
+         Provee muchisimos templates y ejemplos de
+         paginas web
+
+    + Mockups
+
+        a. SneakPeekit
+             Plantillas para imprimir y luego usar
+             al dibujar mockups
+
+
+        b. Balsamiq
+             El standard para crear mockups online
+             de forma profesional
+             (no es gratis)
+                      
+[ ] How to use bootstrap
+
+    + Alternative 1.
+
+        Incluye a <link rel=xxx> tag in the html header
+        section pointing to a CDN
+
+    + Alternative 2.
+
+        Incluye a <link rel=xxx> tag in the html header
+        section pointing to local file where you
+        downloaded the CSS and JS bootstrap files
+
+
+
