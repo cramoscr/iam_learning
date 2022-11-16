@@ -1,0 +1,41 @@
+#title {
+	background-color: tomato;
+	color: #fff;
+}
+
+body {
+	font-family: "Ubuntu";
+}
+h1 {
+	font-family: "Ubuntu-Bold";
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
+.container-fluid {
+	padding: 3% 15%;
+
+}
+
+.navbar {
+	padding: 0 0 4.1rem;
+}
+
+.nav-link {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	font-size: 2.5rem;
+}
+
+.download-button {
+	margin: 5% 3% 5% 0;
+}
+
+.title-image {
+	width: 60%;
+	transform: rotate(20deg);
+}

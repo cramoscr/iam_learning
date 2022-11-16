@@ -1,0 +1,14 @@
+linux_my_notes.txt
+--------------
+Updated: cramos 08/nov/2022
+
+Brief notes about my linux learning process..
+
+
+[ ] File System
+    
+    [ ] ls
+
+        ls -l  : show files in long format (tabular)
+        ls -R  : recursive (show folders and subfolders content)
+        ls -s  : show file's sizes
