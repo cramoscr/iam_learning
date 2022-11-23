@@ -11,10 +11,76 @@ h1 {
 	font-size: 3rem;
 	line-height: 1.5;
 }
+h2 {
+	font-family: "Ubuntu-Bold";
+	font-size: 3rem;
+	line-height: 1.5;
+}
 
 .container-fluid {
 	padding: 3% 15%;
 
+}
+
+#testimonials {
+	padding: 3% 15%;
+	text-align: center;
+	background-color: #ef8172;
+	color: #fff;	
+}
+
+.testimonial-image {
+	border-radius: 100%;
+	size: 20%;
+	margin: 20px;
+}
+
+.carousel-item {
+	padding: 3% 15%;
+}
+
+#press {
+	background-color: #ef8172;
+	text-align: center;
+	padding-bottom: 3%;
+
+}
+
+.press-image {
+	width: 20%;
+	margin: 20px 20px 50px;
+}
+
+#pricing {
+	text-align: center;
+	padding: 100px;
+}
+
+.pricing-column {
+	padding: 3% 2%;
+}
+
+#features {
+	padding: 3% 15%;
+	background-color: #fff;
+}
+
+.feature-box {
+	text-align: center;
+	padding: 9%;
+}
+
+p {
+	color: #8f8f8f;
+}
+
+.ikon {
+	color: #ef8172;
+	margin-bottom: 1rem;
+}
+
+.ikon:hover {
+	color: blue;
 }
 
 .navbar {
@@ -36,6 +102,6 @@ h1 {
 }
 
 .title-image {
-	width: 60%;
+	width: 40%;
 	transform: rotate(20deg);
 }

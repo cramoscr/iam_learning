@@ -40,6 +40,12 @@ Updated: cramos 31/oct/2022
          Provee muchisimos templates y ejemplos de
          paginas web
 
+    + Bootsnipp
+         https://bootsnipp.com/
+
+         Provee templates de html que se pueden reutilizar
+         (ej. login page)
+         
     + Mockups
 
         a. SneakPeekit
@@ -65,5 +71,22 @@ Updated: cramos 31/oct/2022
         section pointing to local file where you
         downloaded the CSS and JS bootstrap files
 
+[ ] Main features
+    
+    [ ] 12-column Grid layout system
 
+    [ ] Containers
+        + Dinamically adapt the contains to the screen width
 
+    [ ] fluid-containers
+        + Always consume 100% of the screen width
+
+    [ ] Buttons
+
+    [ ] Carrousel
+
+    [ ] Cards
+
+        + Use class="card-deck"
+
+        + Don't uses the 12-column grid system by default
