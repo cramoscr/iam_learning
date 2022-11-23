@@ -1,0 +1,11 @@
+@media (max-width: 900px) {
+	h2 {
+		font-size: 80px;
+	}
+}
+
+@media print {
+	h3 {
+		color: red;
+	}
+}

@@ -105,3 +105,29 @@ p {
 	width: 40%;
 	transform: rotate(20deg);
 }
+
+
+/* CTA Section */
+
+#cta {
+	color: #fff;
+	background-color: #ff4c68;
+	padding: 7% 15%;
+	text-align: center;
+}
+
+.cta-heading {
+	font-family: "Monserrat-Black";
+	font-size: 3.5rem;
+	line-height: 1.5;
+}
+
+/* Footer section */
+#footer {
+	padding: 7% 15;
+	text-align: center;
+}
+
+.footer-icon{
+	margin: 30px 10px;
+}

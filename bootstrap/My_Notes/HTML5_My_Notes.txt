@@ -1,0 +1,32 @@
+HTML5_My_Notes.txt
+-------------------
+Updated: cramos 22/nov/2022
+
+This is a non-specific purpose html5 technical notes
+repository
+
+[ ] HTML break points
+ 
+    + CSS styling can be applied under specific circunstances
+      for example when the user is going to print the page
+
+    + Syntax
+
+        @media { type } { feature }
+       
+      Examples
+
+          file.css
+          --------
+             @media print {
+                h1 {
+                  color: red;
+                }
+             }
+
+             @media screen (min-width: 900px) {
+                h1 {
+                  font-size: 50px;
+                }
+             }
+

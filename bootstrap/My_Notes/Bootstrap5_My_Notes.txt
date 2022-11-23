@@ -17,6 +17,13 @@ Updated: cramos 31/oct/2022
           npm
           gem
 
+[ ] Resources:
+    
+    + Test mobile friendly pages:
+
+         https://search.google.com/test/mobile-friendly
+
+         
 [ ] Bootstrap 4 vs 5
 
     https://www.geeksforgeeks.org/difference-between-bootstrap-4-and-bootstrap-5/
