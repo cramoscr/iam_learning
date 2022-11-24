@@ -30,3 +30,68 @@ repository
                 }
              }
 
+[ ] Combining CSS selectors
+
+    + Styling commands can be applied simultaneously
+      to a group of CSS selectors
+
+         file.css
+         --------
+
+         h1, h2, h3 {
+            font-size: 30px;
+            text-color: blue;
+         }
+
+      This will apply the font-size and text-color atributes
+      to several selectos: h1, h2, h3
+
+      Please, note the COMMA separator
+
+    + Styling can be applied hierarchicaly to server
+      selectors
+
+         file.css
+         --------
+
+         div h2 .title {
+            font-size: 15px;
+            text-color: red;
+         }
+
+       This will apply the font-size and text-color
+       only for:
+           + Elements with ".title" class that are
+             contained inside H4 elements that appears
+             inside DIV tags
+
+       Note that there is not COMMA separator !!
+
+    + Especific parent.child relations can be used
+      to apply styling to some particular element
+
+      Example:
+
+         sample.html
+         -----------
+
+         <body>
+            <div class="container">
+               <h1 class="title"> Hello World! </h1>
+            </div>
+            <div class="container-fluid">
+               <h1 class="title"> Bye bye World! </h1>
+            </div>            
+         </body>
+
+         sample.css
+         ----------
+
+         .container .title {
+             text-color: red;
+         }
+
+       This will apply the red color only for the
+       "Hello World!" because of the hierarchy indicated
+       in the css file
+       
