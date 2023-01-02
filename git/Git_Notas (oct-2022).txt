@@ -130,6 +130,9 @@ Updated: cramos 14/oct/2022
  
 [ ] Branching / merging
     
+    + En mi cuenta de github el branch default es MAIN
+      ( no sé por qué, entiendo que debería ser MASTER )
+
     + La idea de crear un branch es poder seguir haciendo
       commit's de forma independiente al MASTER branch, así
       como a los branches "hijos", en forma independiente
@@ -142,8 +145,23 @@ Updated: cramos 14/oct/2022
            
            git branch [nombre_branch]
 
-           git checkout [nombre_branch]        : Para "cambiarse" al branch
-
     + Para ver los branches
            
            git branch
+
+    + Para cambiarse a un branch
+           
+           git checkout [nombre_branch]        : OJO que hasta el File Explorer de 
+                                                 windows muestra contenidos diferentes
+    OJO:
+      En cada branch hay que "meter" los comandos 
+         git add .
+         git commit xxxx
+
+
+    + Para hacer un merge
+         
+         git checkout [main]         : "pararse" en el branch destino
+         git merge [nombre_branch]   : nombre del branch que será unido al MAIN
+    
+
