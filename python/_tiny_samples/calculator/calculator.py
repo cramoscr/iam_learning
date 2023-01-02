@@ -22,7 +22,17 @@ operations = {
 def calculator():
   print(logo)
 
-  num1 = float(input("What's the first number?: "))
+  my_answer = input("What's the first number?: ")
+
+  if str(my_answer) in ['Q', 'q']:
+    return
+
+  try:
+    num1 = float(my_answer)
+  except Exception:
+    print(f"You must enter a number [or Q to exit]")
+    return
+
   for symbol in operations:
     print(symbol)
   should_continue = True
