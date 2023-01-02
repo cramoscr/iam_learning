@@ -38,7 +38,42 @@ Updated: cramos 14/oct/2022
 
       git commit -m "Reorganización de carpetas"
 
+      -- Para enviar los cambios al servidor
       git push
 
-      
+[ ] Para revisar cambios en archivos
+     
+    -- Comparar los cambios de 1 archivo
+    git diff my_archivo.txt
 
+    -- Para ver historial de cambios
+    git log
+
+[ ] Hacer rollback
+    
+    -- Si no se ha hecho commit, se puede regresar rapidamente
+       a una version previa
+
+    git checkout my_file.txt
+
+    -- Si ya se ha hecho commit...
+
+    Opcion 1.
+      git reset [commit id]  : Returns to xxx version and produces a
+                               commit with reverted changes
+                               Recommended when PUSH was not executed
+
+    Option 2.    
+      git revert [commit id] : Returns to xxx version and produces a
+                               commit with reverted changes
+                               Recommended if PUSH was executed
+
+[ ] Comandos para revisar
+         
+    -- git status         : Shows if there is changes to be added / commited
+
+    -- git log            : Shows a list of commits [id + author + date]
+
+    -- git show           : Confusing command :( 
+                            Shows last commit detail + diff content
+           
