@@ -2,9 +2,17 @@ Git_Notas (oct-2022).txt
 --------------------
 Updated: cramos 14/oct/2022
 
+[ ] Para empezar....
+      
+       + instalar git
 
-[ ] Clonar un repositorio existente
+       + Desde cmd
+           ir a la carpeta que se quiere controlar
 
+           c:\> git init 
+          
+
+[ ] Clonar un repositorio (remoto) existente
 
     c:\_my_labs\
 
@@ -12,6 +20,15 @@ Updated: cramos 14/oct/2022
 
         git clone https://github.com/cramoscr/My_Learning.git My_Repo    
 
+
+[ ] Crear un repositorio remoto
+
+    Después de haber hecho commit de forma local, se pueden
+    enviar cambios al server de Github....
+
+       git commit etc etc
+       git remote add origin https://github.com/cramoscr/My_Learning.git
+       git push -u origin master
 
 [ ] Configurar entorno de Git
 
@@ -41,6 +58,7 @@ Updated: cramos 14/oct/2022
       -- Para enviar los cambios al servidor
       git push
 
+
 [ ] Para revisar cambios en archivos
      
     -- Comparar los cambios de 1 archivo
@@ -51,6 +69,12 @@ Updated: cramos 14/oct/2022
 
 [ ] Hacer rollback
     
+    -- Si se quiere eliminar contenido del "staging area" 
+       (o sea, echar "para atrás" el efecto del [ git add . ] )
+           
+           git rm --cached -r .
+
+           
     -- Si no se ha hecho commit, se puede regresar rapidamente
        a una version previa
 
@@ -62,7 +86,15 @@ Updated: cramos 14/oct/2022
       git reset [commit id]  : Returns to xxx version and produces a
                                commit with reverted changes
                                Recommended when PUSH was not executed
+      then...
+         git checkout
 
+      then...
+         git add . 
+         git commit etc etc etc
+         git pull
+         git push
+          
     Option 2.    
       git revert [commit id] : Returns to xxx version and produces a
                                commit with reverted changes
@@ -76,4 +108,42 @@ Updated: cramos 14/oct/2022
 
     -- git show           : Confusing command :( 
                             Shows last commit detail + diff content
+
+[ ] Git ignore
+    
+    a. Util para evitar enviar informacion sensitiva al branch remoto
+       (ej. no enviar passwords or API keys)
+
+       También útil para no enviar archivos "basura" que son generados
+       por las herramientas o lenguages de programación pero que no 
+       agregan valor al proyecto
+
+       Se debe crear un archivo llamado [ .gitignore ]
+
+       El contenido puede ser:
+          + nombre y extensión de los archivos que no se desea enviar
+          + wildcard de los archivos que no se desea enviar
+
+    b. En Github hay una carpeta pública que contiene una lista
+       de templates recomendados para ignorar archivos "basura" que
+       se generan en cada herramienta IDE 
+ 
+[ ] Branching / merging
+    
+    + La idea de crear un branch es poder seguir haciendo
+      commit's de forma independiente al MASTER branch, así
+      como a los branches "hijos", en forma independiente
+      (cada branch sigue su propia línea de tiempo)...
+
+      Finalmente, se hace un merge de los branches hacia
+      el master (o bien, se descartan esos "hijos")
+
+    + Para crear un branch
            
+           git branch [nombre_branch]
+
+           git checkout [nombre_branch]        : Para "cambiarse" al branch
+
+    + Para ver los branches
+           
+           git branch
