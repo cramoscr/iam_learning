@@ -1,0 +1,25 @@
+wls_my_notes.txt
+------------
+Updated: cramos 02/mar/2023
+
+[ ] Reference
+    + Lovely guide for WLS daily operations
+       https://www.sitepoint.com/wsl2/#:~:text=You%20can%20access%20WSL2%20Linux,or%20any%20file%20open%20dialog.&text=Here%2C%20is%20the,the%20distro%20in%20Windows%20Terminal.
+
+[ ] Windows Explorer : get access to WLS folders
+    
+    + Create a network map pointing to:
+      Step 1. Enter into WLS terminal console
+         This will start the WLS appearing from Windows File system
+
+      Step 2. Create a Windows Explorer network map
+
+        \\wsl$\Ubuntu\
+
+[ ] WLS : get access to Windows folders 
+    
+    + From linux terminal console:
+
+         ln -s /mnt/c/projects/code/
+
+
