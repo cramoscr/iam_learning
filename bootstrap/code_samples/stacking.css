@@ -1,0 +1,42 @@
+div {
+  border: 1px solid;
+  position: absolute;
+  height: 100px;
+  width: 100px;  
+}
+
+.red {
+  background-color: red;
+  z-index: 1;
+}
+
+.yellow {
+  background-color: yellow;
+  left: 20px;
+  top: 20px;
+}
+
+.blue {
+  background-color: blue;
+  left: 40px;
+  top: 40px;
+  z-index: -1;  
+}
+
+.brown {
+  background-color: brown;
+  left: 120px;
+  top: 120px;  
+}
+
+.green {
+  background-color: green;
+  left: 160px;
+  top: 160px;
+}
+
+.orange {
+  background-color: orange;
+  left: 200px;
+  top: 200px;
+}

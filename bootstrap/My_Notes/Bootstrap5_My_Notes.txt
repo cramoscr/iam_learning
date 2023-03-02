@@ -1,0 +1,98 @@
+Bootstrap5_My_Notes.txt
+-------------------
+Updated: cramos 31/oct/2022
+
+[ ] Bootstrap overview
+
+    + Bootstrap was originally created by Twitter
+    + Provides UI (front-end) resources for web development.
+    + Can be used in a web page:
+        a. Referencing  a CDN repository
+        b. Downloading the CSS and JS files and including them
+           into the web page source folder
+    + For SaaS purposes, can be installed on a server by using
+          npm
+          gem
+
+[ ] CSS competitors
+    + Foundation
+         https://get.foundation/building-blocks/
+    + TailWind
+         https://tailwindcss.com/
+
+[ ] Resources:
+    
+    + Test mobile friendly pages:
+
+         https://search.google.com/test/mobile-friendly
+
+         
+[ ] Bootstrap 4 vs 5
+
+    https://www.geeksforgeeks.org/difference-between-bootstrap-4-and-bootstrap-5/
+
+[ ] Resources
+
+    + Codeply
+         https://www.codeply.com/
+      
+      On-line editor for
+         Bootstrap 4, 5, etc.
+         VUE
+         React
+
+    + Bootstrap
+         https://getbootstrap.com/
+ 
+    + Dribble
+         https://dribbble.com/
+
+         Provee muchisimos templates y ejemplos de paginas web
+
+    + Bootsnipp
+         https://bootsnipp.com/
+
+         Provee templates de html que se pueden reutilizar
+         (ej. login page)
+         
+    + Mockups
+        a. SneakPeekit
+             Plantillas para imprimir y luego usar al dibujar mockups
+
+
+        b. Balsamiq
+             El standard para crear mockups online de forma profesional
+             (no es gratis)
+                      
+[ ] How to use bootstrap
+
+    + Alternative 1.
+
+        Incluye a <link rel=xxx> tag in the html header
+        section pointing to a CDN
+
+    + Alternative 2.
+
+        Incluye a <link rel=xxx> tag in the html header
+        section pointing to local file where you
+        downloaded the CSS and JS bootstrap files
+
+[ ] Main features
+    
+    [ ] 12-column Grid layout system
+
+    [ ] Containers
+        + Dinamically adapt the contains to the screen width
+
+    [ ] fluid-containers
+        + Always consume 100% of the screen width
+
+    [ ] Buttons
+
+    [ ] Carrousel
+
+    [ ] Cards
+
+        + Use class="card-deck"
+
+        + Don't uses the 12-column grid system by default

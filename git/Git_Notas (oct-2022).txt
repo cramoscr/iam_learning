@@ -1,0 +1,193 @@
+Git_Notas (oct-2022).txt
+--------------------
+Updated: cramos 14/oct/2022
+
+[ ] Referencia
+    + Tutorial: https://learngitbranching.js.org/?locale=es_AR
+
+[ ] Para empezar....
+      
+       + instalar git
+
+       + Desde cmd
+           ir a la carpeta que se quiere controlar
+
+           c:\> git init 
+          
+
+[ ] Clonar un repositorio (remoto) existente
+
+    c:\_my_labs\
+
+       --Instala el branch "My_Learning" dentro del folder "My_Repo"
+
+        git clone https://github.com/cramoscr/My_Learning.git My_Repo    
+
+
+[ ] Crear un repositorio remoto
+
+    Después de haber hecho commit de forma local, se pueden
+    enviar cambios al server de Github....
+
+       git commit etc etc
+       git remote add origin https://github.com/cramoscr/My_Learning.git
+       git push -u origin master
+
+[ ] Configurar entorno de Git
+
+       git config --local user.name "carlos.ramos"
+       git config --local user.email "cramoscr@gmail.com"
+
+       git config --global user.name "carlos.ramos"
+       git config --global user.email "cramoscr@gmail.com"
+
+       git config --list
+
+[ ] Enviar cambios
+
+      -- En la carpeta donde hay cambios: "git add ."
+
+      C:\_My_SoftDev\My_Learning\python> git add .
+
+      
+      -- Para ver los cambios
+
+      git show
+
+      -- Para commitear
+
+      git commit -m "Reorganización de carpetas"
+
+      -- Para enviar los cambios al servidor
+      git push
+
+
+[ ] Para revisar cambios en archivos
+     
+    -- Comparar los cambios de 1 archivo
+    git diff my_archivo.txt
+
+    -- Para ver historial de cambios
+    git log
+
+[ ] Hacer rollback
+    
+    -- Si se quiere eliminar contenido del "staging area" 
+       (o sea, echar "para atrás" el efecto del [ git add . ] )
+           
+           git rm --cached -r .
+
+           
+    -- Si no se ha hecho commit, se puede regresar rapidamente
+       a una version previa
+
+    git checkout my_file.txt
+
+    -- Si ya se ha hecho commit...
+
+    Opcion 1.
+      git reset [commit id]  : Returns to xxx version and produces a
+                               commit with reverted changes
+                               Recommended when PUSH was not executed
+      then...
+         git checkout
+
+      then...
+         git add . 
+         git commit etc etc etc
+         git pull
+         git push
+          
+    Option 2.    
+      git revert [commit id] : Returns to xxx version and produces a
+                               commit with reverted changes
+                               Recommended if PUSH was executed
+
+[ ] Comandos para revisar
+         
+    -- git status         : Shows if there is changes to be added / commited
+
+    -- git log            : Shows a list of commits [id + author + date]
+
+    -- git show           : Confusing command :( 
+                            Shows last commit detail + diff content
+
+[ ] Git ignore
+    
+    a. Util para evitar enviar informacion sensitiva al branch remoto
+       (ej. no enviar passwords or API keys)
+
+       También útil para no enviar archivos "basura" que son generados
+       por las herramientas o lenguages de programación pero que no 
+       agregan valor al proyecto
+
+       Se debe crear un archivo llamado [ .gitignore ]
+
+       El contenido puede ser:
+          + nombre y extensión de los archivos que no se desea enviar
+          + wildcard de los archivos que no se desea enviar
+
+    b. En Github hay una carpeta pública que contiene una lista
+       de templates recomendados para ignorar archivos "basura" que
+       se generan en cada herramienta IDE 
+
+[ ] Branching / merging
+    
+    + En mi cuenta de github el branch default es MAIN
+      ( no sé por qué, entiendo que debería ser MASTER )
+
+    + La idea de crear un branch es poder seguir haciendo
+      commit's de forma independiente al MASTER branch, así
+      como a los branches "hijos", en forma independiente
+      (cada branch sigue su propia línea de tiempo)...
+
+      Finalmente, se hace un merge de los branches hacia
+      el master (o bien, se descartan esos "hijos")
+
+    + Para crear un branch
+           
+           git branch [nombre_branch]
+
+    + Para ver los branches
+           
+           git branch
+
+    + Para cambiarse a un branch
+           
+           git checkout [nombre_branch]        : OJO que hasta el File Explorer de 
+                                                 windows muestra contenidos diferentes
+    OJO:
+      En cada branch hay que "meter" los comandos 
+         git add .
+         git commit xxxx
+
+
+    + Para hacer un merge
+         
+         git checkout [main]         : "pararse" en el branch destino
+         git merge [nombre_branch]   : nombre del branch que será unido al MAIN
+    
+    
+    + Para publicar el nuevo branch hacia el servidor
+
+         git push --set-upstream origin [nombre_branch] 
+
+       Después de esto, ya debería aparecer en la página web de Github, el nuevo
+       branch...
+
+[ ] Fork
+    + Es diferente que un clon porque el clon ocurre dentro
+      de la propia cuenta del dueño del repositorio, mientras
+      que un FORK típicamente es realizado por otro usuario
+      y por tanto, esa copia no queda en control del dueño
+      del repositorio
+
+    + Este es el mecanismo básico de colaboración (varias personas)
+      en un mismo proyecto
+
+    + pull request
+         Tiene sentido porque el "colaborador" le solicita al
+         repository owner que "jale" (´pull) hacia su branch los 
+         cambios que "yo" hice en "mi propio" branch (con el Objetivo
+         final de que se haga un merge)
+

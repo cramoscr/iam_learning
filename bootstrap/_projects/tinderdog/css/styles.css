@@ -1,0 +1,147 @@
+#title {
+	background-color: tomato;
+	color: #fff;
+	text-align: left;	
+}
+
+/* Headings section */
+
+.section-heading {
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
+
+body {
+	font-family: "Ubuntu";
+	text-align: center;	
+}
+
+h1, h2 {
+	font-family: "Ubuntu-Bold";
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
+.container-fluid {
+	padding: 3% 15%;
+
+}
+
+/* Testimonials section */
+
+#testimonials {
+	padding: 3% 15%;
+	background-color: #ef8172;
+	color: #fff;	
+}
+
+.testimonial-text {
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
+.testimonial-image {
+	border-radius: 100%;
+	size: 20%;
+	margin: 20px;
+}
+
+.carousel-item {
+	padding: 3% 15%;
+}
+
+#press {
+	background-color: #ef8172;
+	padding-bottom: 3%;
+
+}
+
+.press-image {
+	width: 20%;
+	margin: 20px 20px 50px;
+}
+
+/* Price section */
+#pricing {
+	padding: 100px;
+}
+
+.pricing-column {
+	padding: 3% 2%;
+}
+
+.price-test {
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
+#features {
+	padding: 3% 15%;
+	background-color: #fff;
+}
+
+.feature-box {
+	padding: 9%;
+}
+
+p {
+	color: #8f8f8f;
+}
+
+.ikon {
+	color: #ef8172;
+	margin-bottom: 1rem;
+}
+
+.ikon:hover {
+	color: blue;
+}
+
+.navbar {
+	padding: 0 0 4.1rem;
+}
+
+.nav-link {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	font-size: 2.5rem;
+}
+
+.download-button {
+	margin: 5% 3% 5% 0;
+}
+
+.title-image {
+	width: 40%;
+	transform: rotate(20deg);
+}
+
+
+/* CTA Section */
+
+#cta {
+	color: #fff;
+	background-color: #ff4c68;
+	padding: 7% 15%;
+}
+
+.cta-heading {
+	font-family: "Monserrat-Black";
+	font-size: 3.5rem;
+	line-height: 1.5;
+}
+
+/* Footer section */
+
+#footer {
+	padding: 7% 15;
+}
+
+.footer-icon{
+	margin: 30px 10px;
+}
