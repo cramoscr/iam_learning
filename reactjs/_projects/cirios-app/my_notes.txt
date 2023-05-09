@@ -1,0 +1,29 @@
+my_notes.txt
+--------
+Updated: cramos 08/may/2023
+
+This is my sandbox where Cirios-App will be made.
+
+[ ] React-based Picture gallery examples
+    + React repository
+        https://reactjsexample.com/tag/gallery/
+
+    + Main candidate
+        https://reactjsexample.com/blogs-and-gallery-app-built-with-react-js/
+  
+    + Beautiful example:
+      https://galleria-seven.vercel.app/
+
+[ ] Cloud platform:
+    + AWS Amplify looks promising because:
+         a. Extremely low price 
+         b. Provides an React hosting example
+         c. Provides access to S3 for picture storage
+         d. Provides a Figma automation mecanism
+    
+    + There is a Google Photos picture gallery so easily
+        - It's no beauty but functional
+         
+          https://codesandbox.io/s/8k2kvlnly0
+
+
