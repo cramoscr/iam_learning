@@ -45,6 +45,10 @@ Updated: cramos 14/oct/2022
 
 [ ] Enviar cambios
 
+      + Notes:
+           username:  cramoscr@gmail.com
+           password: { use previously generated access token }
+
       -- En la carpeta donde hay cambios: "git add ."
 
       C:\_My_SoftDev\My_Learning\python> git add .
