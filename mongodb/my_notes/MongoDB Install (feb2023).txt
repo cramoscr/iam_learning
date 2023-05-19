@@ -48,8 +48,65 @@ Updated: cramos 28/feb/2023
     + Conectarse a la instancia local
 	
 	      $ mongosh   [ENTER]
- 		  
+		 
+    + Conectar a MongoDB en la nube
 	
+		  $ mongosh "mongodb+srv://cluster0.bzubbxx.mongodb.net/myFirstDatabase" --apiVersion 1 --username user1
+ 		  
+
+[ ] CRUD y cosas basicas
+
+    a. enter into mongoSH
+
+		  $ mongosh "mongodb+srv://cluster0.bzubbxx.mongodb.net/myFirstDatabase" --apiVersion 1 --username user1
+                      
+                       password: "txmpxrxl"
+                      
+                       { valid until may-2023 }
+
+    b. Show databases
+	
+		  Atlas atlas-b9gkuy-shard-0 [primary] > show databases
+		  
+             CramosDB    112.00 KiB
+             todolistDB  144.00 KiB
+             admin       368.00 KiB
+             local         6.67 GiB
+
+    c. Show collections
+
+            $ use CramosDB
+			
+			    switched to db CramosDB
+				
+			$ CramosDB> show collections
+			
+			               orders
+                           products
+			
+    d. Show collection contents
+	
+            $ CramosDB> db.orders.find()
+		          [
+                    {
+                      _id: ObjectId("63d2adff9889ff2a879f6276"),
+                      order_id: 1,
+                      date: '26/jan/2023',
+                      products: [ 2, 4 ]
+                    }
+                  ]
+
+    d. Insert "document" into collection
+
+            Atlas atlas-b9gkuy-shard-0 [primary] CramosDB> 
+			
+			       db.orders.insertOne( { order_id: 2, date: '31/mar/2023', productsqt: [1, 4] } )
+                           {
+                             acknowledged: true,
+                             insertedId: ObjectId("642781714fe303d182d01006")
+                            }
+	    
+				  
 [ ] Desinstalar
     
     $ sudo service mongod stop

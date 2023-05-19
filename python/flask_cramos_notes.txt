@@ -27,4 +27,4 @@ Apuntes "sueltos" de lo que voy aprendiendo sobre Flask.
       Luego, en el URL, cuando se cae, en la fila donde
       se muestra el error, aparece un icono para entrar al 
       debugger
-          
+[ ]

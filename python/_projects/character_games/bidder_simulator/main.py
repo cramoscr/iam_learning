@@ -1,6 +1,11 @@
-# bidder_simulator.py
-# ----------------
-# Updated: cramos 12/ago/2022
+# main.py
+# -------
+# Updated: cramos 02/mar/2023
+# Simple character GUI based game
+# 
+# Try it:
+#    $ python3 main.py
+#
 
 import os 
 

@@ -13,6 +13,22 @@ This is my sandbox where Cirios-App will be made.
   
     + Beautiful example:
       https://galleria-seven.vercel.app/
+ 
+    + Shopping cards
+        - Several examples
+             https://codesandbox.io/examples/package/react-shopping-cart
+
+        - Simple (partial)
+             https://codepen.io/robinhuy/pen/VOVbOw
+
+        - Beauty and simple
+             https://6ncow.csb.app/             [ live demo ]
+             https://codesandbox.io/s/6ncow
+
+        - Good one
+             https://commercejs.com/docs/community/creating-a-cart-with-react-js/
+             https://adding-products-to-cart-commercejs.netlify.app/
+        
 
 [ ] Cloud platform:
     + AWS Amplify looks promising because:
@@ -20,6 +36,9 @@ This is my sandbox where Cirios-App will be made.
          b. Provides an React hosting example
          c. Provides access to S3 for picture storage
          d. Provides a Figma automation mecanism
+
+         Tutorial:
+            https://aws.amazon.com/es/blogs/mobile/build-a-photo-gallery-react-app-using-amplify-studios-new-file-storage-capabilities/
     
     + There is a Google Photos picture gallery so easily
         - It's no beauty but functional

@@ -1,0 +1,18 @@
+python_my_notes.txt
+---------------
+Updated: cramos 06/mar/2023
+
+
+[ ] How to upgrade python 
+    
+    + Reference:
+         https://serverspace.io/support/help/install-python-latest-version-on-ubuntu-20-04/
+
+    + It's works for me on WLS2 + ubuntu 20.04
+
+    + How to see ubuntu version:
+        $ lsb_release -a
+
+[ ] How to create a "shortcut" to access python v3.11
+    
+        $ ln -s /usr/bin/python3.11 /usr/bin/python

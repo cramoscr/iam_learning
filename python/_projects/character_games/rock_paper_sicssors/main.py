@@ -1,7 +1,13 @@
-# rock_paper_scicssors.py
-# --------------------
-# Updated: cramos 06/ago/2022
+# main.py
+# -------
+# Updated: cramos 03/mar/2022
 # Based on TheLondonApp's "100Days of Python" course
+#
+# This is a character GUI based game
+# Simulates the rock_paper_scicssors game
+#
+# Try it:
+#    $ python3 main.py
 
 import os 
 import random
@@ -42,7 +48,7 @@ symbols = [rock, paper, scissors]
 
 while True:
     # Clear the screen
-    os.system('cls')
+    os.system('clear')
 
     print(f'\n Welcome to [ Rock <> Paper <> Scissors ] game \n')
 
@@ -75,5 +81,5 @@ while True:
 
     my_answer = input('\n Play again [y/n] : ')
 
-    if my_answer != 'Y':
+    if my_answer.upper() != 'Y':
         break

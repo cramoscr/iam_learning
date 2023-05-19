@@ -15,7 +15,10 @@ const mongoose = require ('mongoose');
 mongoose.set('strictQuery', true);
 
 // carsDB will be created if doesn't exists
-mongoose.connect("mongodb://localhost:27017/carsDB");
+//mongoose.connect("mongodb://localhost:27017/carsDB");
+
+// Connection to Cloud - Atlas based mongoDB
+mongoose.connect("mongodb+srv://user1:temporal@cluster0.bzubbxx.mongodb.net/carsDB", { useNewUrlParser: true });
 
 // Create the schema for Car instances
 const carSchema = new mongoose.Schema ({
