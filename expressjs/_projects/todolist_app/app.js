@@ -19,7 +19,6 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-//const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");           // <--- Trick here, using "_" as a library name !
 
@@ -35,7 +34,7 @@ app.use(express.static("public"));
 //mongoose.connect("mongodb://localhost:27017/todolistDB", { useNewUrlParser: true });
 
 // Connection to Cloud - Atlas based mongoDB
-mongoose.connect("mongodb+srv://user1:temporal@cluster0.bzubbxx.mongodb.net/todolistDB", { useNewUrlParser: true });
+//mongoose.connect("mongodb+srv://user1:txxpxxax@cluster0.bzubbxx.mongodb.net/todolistDB", { useNewUrlParser: true });
 
 const itemsSchema = {
   name: String
@@ -73,19 +72,15 @@ const List = mongoose.model("List", listSchema);
 
 /* ---------------- Section Two ----------------- */
 
+// Handling the starting page (showing stored or initial tasks)
 app.get("/", function (req, res) {
   //const day = date.getDate();
-  Item.find({}, function (err, foundItems) {
-
-    // If ToDo items collection is empty, populate it with
-    // initial dataset
+  Item.find().then((foundItems) => {
+    // If ToDo collection is empty, populate it with initial dataset
     if (foundItems.length === 0) {
-      Item.insertMany(startItems, function (err) {
-        if (err) {
-          console.log(err);
-        } else {
+      Item.insertMany().then((startItems) => {
+        // ToDo: work needed here... How to handle errors
           console.log("Successfully inserted starting Items into DB...");
-        }
       });
       res.redirect("/");   // <--- Tricky thing ! Reload the page to show default items
     } else {
@@ -95,28 +90,7 @@ app.get("/", function (req, res) {
   });
 });
 
-// Handling "general" requests [ example: http://localhost:3000/worklist ]
-app.get("/:customListName", function (req, res) {
-  const customListName = _.capitalize(req.params.customListName);
-
-  List.findOne({ name: customListName }, function (err, foundList) {
-    if (!err) {
-      if (!foundList) {
-        // Create a new list
-        const list = new List({
-          name: customListName,
-          items: startItems
-        });
-        list.save();
-        res.redirect("/" + customListName);
-      } else {
-        // Show existing list items
-        res.render("list", { listTitle: foundList.name, newListItems: foundList.items });
-      }
-    }
-  });
-});
-
+// Handling post requests
 app.post("/", function (req, res) {
   // list.ejs contains the "newItem" field in the <input> section
   const itemName = req.body.newItem;
@@ -128,26 +102,28 @@ app.post("/", function (req, res) {
     item.save();
     res.redirect("/");
   } else {
+    console.log ('Work needed: app.post ....');
+    /*
     List.findOne({ name: listName }, function (err, foundList) {
       foundList.items.push(item);
       foundList.save();
       res.redirect("/" + listName);
     });
+    */
   };
 });
 
+// Handling deletion
 app.post("/delete", function (req, res) {
   const checkedItemId = req.body.checkbox;
   const listName = req.body.listName;
 
-  console.log("the listName....................: " + listName);
+  console.log("listName....................: " + listName);
 
   if (listName === "Today") {
-    Item.findByIdAndRemove(checkedItemId, function (err) {
-      if (!err) {
+    Item.findByIdAndRemove().then((checkedItemId) => {
         console.log("Successfully deleted the item !!! ");
         res.redirect("/");
-      }
     });
   } else {
     // Something complex is happening here...
@@ -165,6 +141,30 @@ app.get("/work", function (req, res) {
 
 app.get("/about", function (req, res) {
   res.render("about");
+});
+
+// Handling "general" requests [ example: http://localhost:3000/worklist ]
+app.get("/:customListName", function (req, res) {
+  const customListName = _.capitalize(req.params.customListName);
+  console.log('work needed: /customListName...')
+  /*
+  List.findOne({ name: customListName }, function (err, foundList) {
+    if (!err) {
+      if (!foundList) {
+        // Create a new list
+        const list = new List({
+          name: customListName,
+          items: startItems
+        });
+        list.save();
+        res.redirect("/" + customListName);
+      } else {
+        // Show existing list items
+        res.render("list", { listTitle: foundList.name, newListItems: foundList.items });
+      }
+    }
+    
+  }); */
 });
 
 // Handling Heroku's dyamic port assignment
