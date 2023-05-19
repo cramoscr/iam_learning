@@ -1,0 +1,21 @@
+{
+  "name": "todolist_app",
+  "version": "1.0.0",
+  "description": "ToDo List based on ExpressJS+MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "mongodb"
+  ],
+  "author": "Cramoscr",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.1.2"
+  }
+}
