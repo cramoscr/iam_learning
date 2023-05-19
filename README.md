@@ -1,23 +1,24 @@
-# My_Learning
-These are examples of programming exercises created during
-my learning process.
+# iam_learning
 
-As a programmer who started with Basic and Pascal (thousand
-of years ago), I am doing my job of trying to keep current 
-with new programming languages and development frameworks.
+Hello, my name is Carlos.
 
-I will be mainly focused on mastering:
+I still remember when I was a teenager and considered computers
+science-fiction things.  It was on 90's and such devices
+was uncommon in this place.  Plenty of curiosity and scared I decided
+to start learning programming, by myself.
+
+After plenty of years, here I am (with plenty of curiosity, again ) revamping
+my developing skills.
+
+Here you will find some programming samples created during this
+refreshing process.
+
+I will be mainly focused on learning:
   - Python
   - Flutter
-  - ReactJS
+  - ReactJS / ExpressJS
 
-Luckily, there are great learning resources that provide 
-really funny, engaging and relevant labs.
-
-Here you will find two types of code snippets:
-  - Small exercises produced when attending the courses
-  - Projects with more complexity level
-
-I hope this will inspire you on your learning journey.
+What can I produce with such new skills ? What the future could
+bring ?  This is something really exciting to me.
 
 Carlos.
