@@ -124,22 +124,17 @@ app.post("/delete", function (req, res) {
   console.log("listName....................: " + listName);
 
   if (listName === "Today") {
-    Item.findByIdAndRemove().then((checkedItemId) => {
-        console.log("Successfully deleted the item !!! ");
+    Item.findByIdAndRemove(checkedItemId).then((errors) => {
+        console.log("Item deleted Successfully !!! ");
         res.redirect("/");
     });
   } else {
     // Something complex is happening here...
-    List.findOneAndUpdate({ name: listName }, { $pull: { items: { _id: checkedItemId } } }, function (err, foundItems) {
-      if (!err) {
+    //List.findOneAndUpdate({ name: listName }, function (err, foundItems) {
+    List.findOneAndUpdate({ name: listName }, { $pull: { items: { _id: checkedItemId }}}).then((foundItems) => {
         res.redirect("/" + listName);
-      }
     });
   }
-});
-
-app.get("/work", function (req, res) {
-  res.render("list", { listTitle: "Work List", newListItems: workItems });
 });
 
 app.get("/about", function (req, res) {
@@ -148,26 +143,22 @@ app.get("/about", function (req, res) {
 
 // Handling "general" requests [ example: http://localhost:3000/worklist ]
 app.get("/:customListName", function (req, res) {
-  const customListName = _.capitalize(req.params.customListName);
-  console.log('work needed: /customListName...')
-  /*
-  List.findOne({ name: customListName }, function (err, foundList) {
-    if (!err) {
-      if (!foundList) {
-        // Create a new list
-        const list = new List({
-          name: customListName,
-          items: startItems
-        });
-        list.save();
-        res.redirect("/" + customListName);
-      } else {
-        // Show existing list items
-        res.render("list", { listTitle: foundList.name, newListItems: foundList.items });
-      }
+  const customList = _.capitalize(req.params.customListName);
+  
+  List.findOne({name: customList}).then((foundList) => {
+    if (!foundList) {
+      // Create a new list
+      const list = new List({
+        name: customList,
+        items: startItems
+      });
+      list.save();
+      res.redirect("/" + customList);
+    } else {
+      // Show existing list items
+      res.render("list", { listTitle: foundList.name, newListItems: foundList.items });
     }
-    
-  }); */
+  });
 });
 
 // Handling Heroku's dyamic port assignment
