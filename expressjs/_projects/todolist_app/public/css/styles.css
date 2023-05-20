@@ -94,3 +94,18 @@ footer {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+
+
+/* Navigation bar section */
+navbar {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	padding: 20px;
+  color: black;
+  background-color: coral;
+}
+
+navbar a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 0 20px 20px 0;
+}
