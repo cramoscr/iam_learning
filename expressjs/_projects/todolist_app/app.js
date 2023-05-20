@@ -6,11 +6,13 @@
 // into mongoDB database [ called: todolistDB ]
 //    (is not using React, just: Express + MongoDB + NodeJS)
 
-// Prerequisits:
+// Pre-requisits:
+//  + Libraries
 //    $ npm install express
 //    $ npm install mongoose
 //    $ npm install loadash
 //    $ npm install ejs
+//  + Requires connection to mongodb instance
 
 // How to try it:
 //   node app.sj
@@ -35,6 +37,7 @@ app.use(express.static("public"));
 
 // Connection to Cloud - Atlas based mongoDB
 //mongoose.connect("mongodb+srv://user1:txxpxxax@cluster0.bzubbxx.mongodb.net/todolistDB", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://user1:temporal@cluster0.bzubbxx.mongodb.net/todolistDB", { useNewUrlParser: true });
 
 const itemsSchema = {
   name: String
