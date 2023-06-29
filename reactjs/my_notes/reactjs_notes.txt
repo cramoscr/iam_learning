@@ -1,0 +1,53 @@
+reactjs_notes.txt 
+-------------
+Updated: cramos 03/jun/2023
+
+[ ] There is almost nothing here....
+    
+    + Most of the notes I took during my TheLondonAppBrewery
+      web development course were in paper 
+      [using Cornell's template]
+
+[ ] Create-react-app  {revisited, four years later}
+    03/jun/2023
+
+    + Reference
+        https://create-react-app.dev/docs/getting-started/
+    
+    + Environment
+        PFC's computer
+        Windows 11 + WSL [ ubuntu 20  + node 18.x ]
+
+    + Installation
+        Theres is not specific installation method...
+
+        First time we use the create-react-app command
+        it ask's for installation 
+
+    + Purpose
+        This utility creates a folder structure for our
+        new react app
+    
+    + My first try
+        ~/. . ./reactjs/_projects $ create-react-app pcatalog-app
+
+      Results:
+         pcatalog-app   
+            REAME.md 
+            package.json 
+            public/
+               index.html
+               etc..
+            src/
+               app.js
+               index.js
+               etc..
+            node_modules/
+         
+    + Running the app
+ 
+        $ cd pcatalog-app
+        pcatalog-app$ npm started
+
+
+     

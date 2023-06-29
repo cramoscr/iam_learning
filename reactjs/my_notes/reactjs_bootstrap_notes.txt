@@ -1,0 +1,28 @@
+reactjs_bootstrap_notes.txt
+-----------------------
+Updated: cramos 26/jun/2023
+
+[ ] Reference
+
+    + React-Bootstrap library
+	
+	  https://react-bootstrap.netlify.app/docs/getting-started/introduction
+
+[ ] Proyectos
+      git hub cramos
+	  
+	     /mySoftDev/iam_learning/reactjs/_projects
+
+             $ npx create-react-app bootstrap-app
+			 
+			 $ cd bootstrap-app
+			 
+			 $ npm start
+			 
+			 $ npm install react-bootstrap bootstrap
+			 
+[ ] 
+
+[ ] 
+
+

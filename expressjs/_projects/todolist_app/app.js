@@ -36,7 +36,6 @@ app.use(express.static("public"));
 //mongoose.connect("mongodb://localhost:27017/todolistDB", { useNewUrlParser: true });
 
 // Connection to Cloud - Atlas based mongoDB
-//mongoose.connect("mongodb+srv://user1:txxpxxax@cluster0.bzubbxx.mongodb.net/todolistDB", { useNewUrlParser: true });
 mongoose.connect("mongodb+srv://user1:temporal@cluster0.bzubbxx.mongodb.net/todolistDB", { useNewUrlParser: true });
 
 const itemsSchema = {
