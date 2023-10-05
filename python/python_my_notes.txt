@@ -2,6 +2,9 @@ python_my_notes.txt
 ---------------
 Updated: cramos 06/mar/2023
 
+[ ] How to upgrade Python on AWS Linux 1 instance
+    https://tecadmin.net/how-to-install-python-3-11-on-amazon-linux-2/
+    This works for me !  oct-23
 
 [ ] How to upgrade python 
     
