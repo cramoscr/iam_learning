@@ -1,0 +1,6 @@
+typescript_my_notes.txt
+-------------------
+Updated: cramos 20/ago/2024
+
+install typescript
+   $ npm install -g typescript
