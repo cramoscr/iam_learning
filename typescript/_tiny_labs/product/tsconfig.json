@@ -1,0 +1,16 @@
+// Typescript compiler config file
+
+{
+    "compilerOptions": {
+        "outDir": "build",          //where output files are placed
+        "target": "esnext",         //esnext means standard Javascript
+        "module": "esnext",
+        "lib": ["DOM", "esnext"],
+        "strict": true,             // strict type checking
+        "jsx": "react",
+        "moduleResolution": "node",  // how dependencies are found: use node_modules
+        "noEmitOnError": true        // Didn't produce the output file when error happens
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "build"]
+}
