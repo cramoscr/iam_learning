@@ -9,3 +9,15 @@ Updated: cramos 15/nov/2024
 4. Identify the relationships between entities
    Choose between embedding and referencing
 5. Apply appropriate design patterns (if necessary)
+
+-------------------
+Design rule { mantra }
+  + Data that is ACCESSED toghether should be STORED toghether
+  + Data that is accessed separately, should be stored separately
+-------------------
+
+1. Collect system requirements
+    a. Functional
+       Users / Admins: called librarians
+    b. Performance
+       Data / expectations
