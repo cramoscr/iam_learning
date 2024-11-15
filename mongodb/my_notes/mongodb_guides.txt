@@ -9,3 +9,6 @@ mdb.link/dmw-manual
 
 Intro to Datamodeling
   https://www.mongodb.com/resources/basics/webinar-intro-to-data-modeling?utm_source=Iterable&utm_medium=email&utm_campaign=campaign_11709540&utm_content=Email_3_Intro_to_Data_Modeling_Nov_13th_11_15
+
+Data Model Examples and Patterns
+   https://www.mongodb.com/docs/manual/applications/data-models/?utm_campaign=devrel&utm_source=youtube&utm_medium=organic_social&utm_content=w2dO6uEbvP0&utm_term=michael.lynn
