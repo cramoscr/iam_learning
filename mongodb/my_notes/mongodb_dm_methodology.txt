@@ -15,6 +15,9 @@ Design rule { mantra }
   + Data that is ACCESSED together should be STORED together
   + Data that is accessed separately, should be stored separately
 -------------------
+  MongoDB limits:
+     max document size: 16 MB
+-------------------
 
 1. Collect system requirements
     a. Functional
@@ -23,7 +26,9 @@ Design rule { mantra }
        Data / expectations
 
     Workload requirement template:
+       Type   Operation         Information          Frequency   Criticality
+       ------ ----------------- -------------------- ----------- -----------
+       READ   Show books        Title, Author, date  1,000/hour  Medium
+       WRITE  Add book          Title, Author, date  100 / day   High
 
-    Type   Operation         Information          Frequency   Criticality
-    ------ ----------------- -------------------- ----------- -----------
-    READ   Show books        Title, Author, date  1,000/hour  Medium
+   
