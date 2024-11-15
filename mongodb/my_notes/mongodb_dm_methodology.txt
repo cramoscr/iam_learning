@@ -12,7 +12,7 @@ Updated: cramos 15/nov/2024
 
 -------------------
 Design rule { mantra }
-  + Data that is ACCESSED toghether should be STORED toghether
+  + Data that is ACCESSED together should be STORED together
   + Data that is accessed separately, should be stored separately
 -------------------
 
@@ -21,3 +21,9 @@ Design rule { mantra }
        Users / Admins: called librarians
     b. Performance
        Data / expectations
+
+    Workload requirement template:
+
+    Type   Operation         Information          Frequency   Criticality
+    ------ ----------------- -------------------- ----------- -----------
+    READ   Show books        Title, Author, date  1,000/hour  Medium
