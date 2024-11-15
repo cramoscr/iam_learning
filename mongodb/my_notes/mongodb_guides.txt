@@ -1,0 +1,11 @@
+MongoDB_Guides.txt
+--------------
+Updated: cramos 15/nov/2024
+
+mdb.link/dmw-patterns
+mdb.link/dmw-webinars
+mdb.link/dmw-podcast
+mdb.link/dmw-manual
+
+Intro to Datamodeling
+  https://www.mongodb.com/resources/basics/webinar-intro-to-data-modeling?utm_source=Iterable&utm_medium=email&utm_campaign=campaign_11709540&utm_content=Email_3_Intro_to_Data_Modeling_Nov_13th_11_15
