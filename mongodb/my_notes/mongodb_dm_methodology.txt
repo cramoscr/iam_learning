@@ -1,0 +1,11 @@
+mongodb_dm_methodology.txt
+--------------------------------
+Updated: cramos 15/nov/2024
+
+1. Collect system requirements
+2. Identify database entities and their properties
+3. Determine database workloads.
+   Write down the common operations, their frequency and criticality
+4. Identify the relationships between entities
+   Choose between embedding and referencing
+5. Apply appropriate design patterns (if necessary)
