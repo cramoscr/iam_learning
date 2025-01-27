@@ -1,0 +1,42 @@
+mongodb_dm_methodology.txt
+--------------------------------
+Updated: cramos 15/nov/2024
+
+1. Collect system requirements
+2. Identify database entities and their properties
+3. Determine database workloads.
+   Write down the common operations, their frequency and criticality
+4. Identify the relationships between entities
+   Choose between embedding and referencing
+5. Apply appropriate design patterns (if necessary)
+
+-------------------
+Design rule { mantra }
+  + Data that is ACCESSED together should be STORED together
+  + Data that is accessed separately, should be stored separately
+-------------------
+  MongoDB limits:
+     max document size: 16 MB
+-------------------
+
+1. Collect system requirements
+    a. Functional
+       Users / Admins: called librarians
+    b. Performance
+       Data / expectations
+
+----------
+
+[ ] Workload requirement template:
+
+       Type   Operation         Information          Frequency   Criticality
+       ------ ----------------- -------------------- ----------- -----------
+       READ   Show books        Title, Author, date  1,000/hour  Medium
+       WRITE  Add book          Title, Author, date  100 / day   High
+
+[ ] Relationships
+
+    Relationship       Embeded or Reference  Type
+    ------------------ --------------------  --------------
+    Book - Author      Reference             few:few
+    Book - Review      Embeded               one:many

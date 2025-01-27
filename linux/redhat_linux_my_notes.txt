@@ -1,0 +1,1023 @@
+redhat_linux_my_notes.txt
+----------------------
+Updated: cramos 25/ene/2023
+
+Objetivo:
+   Voy a seguir un curso de fundamentos Linux mediante RedHat usando EDX
+
+   Fundamentos:
+     a. File System (CRUD, seguridad)
+     b. Users, Groups
+     c. Instalar cosas (package management)
+     
+   Intermedio:
+     a. chron
+     b. process monitor
+     c. grep
+     d. networking
+     e. firewall
+
+   Avanzado: 
+      a. Instalar:
+            ubuntu, fedora, centOS, debian, apple
+      b. Instalar hardware (cpu, video, etc)
+      c. Clustering
+      d. Virtual Machine
+      e. Desktop (x-windows)
+      f. Servicios: 
+            dhcp, dns, http, nfs/samba, print
+      g. Seguridad avanzada
+           syslog, etc
+
+****************************
+
+
+[ ] Referencias:
+
+    + PDF muy valioso:
+        EDX - RH066X-Student-Guide-RHEL8.pdf
+
+    EDX: Ingresar como cramoscr@gmail.com
+         https://learning.edx.org/course/course-v1:RedHat
+         
+         RH066x   (finalizado 7-dic-2020)
+
+    https://www.rapidtables.com/code/linux/ls.html
+ 
+    + OpenSource.com
+         Tiene algunos materiales utiles sobre Linux
+         y todo el ecosistema de OpenSource         
+         https://opensource.com/open-source-way
+
+[ ] Quéjese aquí...
+
+    + Este curso es de muy MALA calidad... El instructor en
+      realidad solo LEE un guión muy breve (no explica) y
+      en los temas complicados la cosa resulta totalmente
+      insuficiente (caso superuser, su command, etc)
+
+      En el lab del Chapter 5, el mae hace actividades que uno
+      no puede hacer porque la instalación de RHEL en AWS no
+      tiene una preparación para dicho tutorial:
+        - no hay usuarios,
+        - no se conoce el password del root
+        - etc
+
+[ ] Contexto
+    + RedHat Enterprise usa Fedora para desarrollar funciones
+      y cuando han sido probadas "se las cacha"
+      
+      RHEL genera updates cada 6 meses
+
+      Fedora genera updates 1 vez al ano
+
+    + RHEL usa un modelo de suscripcion:
+        a. O sea, "echandi jimenez" (no es gratis)
+        b. Hay versiones gratuitas bajo el Development program
+           https://developer.redhat.com
+
+
+*****************************************
+
+[ ] Conceptos generales
+     
+                       Operating System
+            //////////////////////////////////////
+            //                                  //
+            //   ------------        |       |  //
+            //   |   core   |   <--- | Shell |  //  <---         Users
+            //   ------------        |       |  //       ( interact with shell)
+            //                                  //
+            //////////////////////////////////////
+
+[ ] Acceso a consola
+    + Mediante GUI
+
+    + Mediante SSH (secure shell)
+
+       Para usar mi instancia RHEL en AWS:
+          a. Abrir Putty
+          b. Pegar el DNS name
+          c. En panel izq / Connection / SSH / Auth: 
+               Elegir el ppk
+
+                  C:\Users\Carlos.Ramos\OneDrive
+                       \_Estudio\Cloud_Services\Amazon AWS
+                            \SSH_PrivateKeys
+
+           User: ec2-user
+       Password: [ contenido en el ppk ] no hay que digitar nada
+
+
+       b. Desde una consola hacia un server
+
+             [user@host]$ ssh remoteuser@remotehost
+                              password: xxxx
+
+     + Para salir (loggout)
+
+             [user@host]$ exit
+
+************************
+
+[ ] Comando basicos
+
+     [user@host] $ whoami     <--- return the logged username
+                     ec2-user
+
+                 $ date
+                                    Thu Nov 12 05:07:58 UTC 2020
+
+     
+     $ passwd
+                                     current password: 
+                                     new password:
+                                     retype new password:
+
+     $ file /tmp/myfile  <--- retorna el tipo de archivo
+
+     $ cd /etc
+     [ec2-user@ip-172-31-6-80 /etc] $
+
+     $ cat /etc/redhat-release
+
+                                  Red Hat Enterprise Linux release 8.3 (Ootpa)
+
+     $ less /etc/os-release
+                                  
+                                  NAME="Red Hat Enterprise Linux"
+                                  VERSION="8.3 (Ootpa)"
+                                  ID="rhel"
+                                  ID_LIKE="fedora"
+                                  VERSION_ID="8.3"
+                                  PLATFORM_ID="platform:el8"
+                                  PRETTY_NAME="Red Hat Enterprise Linux 8.3 (Ootpa)"
+                                  ANSI_COLOR="0;31"
+                                  CPE_NAME="cpe:/o:redhat:enterprise_linux:8.3:GA"
+                                  HOME_URL="https://www.redhat.com/"
+                                  BUG_REPORT_URL="https://bugzilla.redhat.com/"
+
+[ ] Ver contenido de archivos
+
+    + Comandos
+       less /etc/passwd           <-- Muestra contenido, pero paginando 
+                                      [ space, up arrow, down arrow ]
+                                        q : salir
+
+       head /etc/passwd           <-- Muestra primeras 10 líneas del archivo
+       head -n 3 /etc/passwd      <-- Muestra primeras 3  líneas del archivo
+
+       tail /etc/passwd           <-- Muestra últimas 10 líneas del archivo
+       tail -n 3 /etc/passwd      <-- Muestra últimas 3  líneas del archivo
+
+    + Modificadores y otros trucos
+
+      Un comando se puede digitar en varias lineas, para
+      ello se usa el slash "\"
+
+         tail /etc/passwd  \
+              otro/archivo \
+              -n 2  [enter]
+
+      Por otra parte, los comandos LESS, TAIL y muchos más se pueden
+      ejecutar sobre múltiples archivos
+
+        tail /etc/passwd /etc/group   <--- Muestra 1eras líneas de ambos arch
+    
+[ ] Conteo de caracteres o filas de un archivo
+
+     $ wc /etc/passwd
+         46 105 2534 /etc/passwd   : Qty lines, Qty words, Qty bytes
+
+       wc -l /etc/passwd   : lines
+       wc -c /etc/passwd   : characters (bytes)
+       wc -w /etc/passwd   : words
+
+[ ] Command line
+
+    + Para ver historial
+        $ history
+
+    + Para ejecutar un comando del historial
+        $  !nn      <---- nn es el numero de comando del historial
+                          esto es llamado BANG	
+ 
+    + Shortcuts
+         CTRL + A   : Jump to the beginning of the command line
+         CTRL + E   : Jump to the end
+         CTRL + U   : Clear from the cursor to the Beginning
+         CTRL + K   : Clear from the cursor to the End
+         CTRL + R   : Reverse search inside the command history
+
+         CTRL + Left Arrow  : jumps into the previous word
+         CTRL + Right Arrow : jumps into the next word
+
+         CTRL + l   : limpiar la pantalla (clear)
+         
+    + Para usar "la parte derecha" del ultimo comando...
+
+        $ cat [ESC .]
+
+
+[ ] File system
+
+    + Files and folder enumeration
+
+      $ ls [options] [file|dir]
+
+        ls -l         <--- long format (tabular) User,Group,Date,Size, etc.
+        ls -S         <--- Sort by Size
+        ls -t         <--- Sort by Date
+        ls -R         <--- List recursive
+        ls -r         <--- Reverse ordering
+        ls *          <--- List subdirectories
+        ls -d         <--- List folders ONLY (directories)
+
+    + touch
+        
+        The touch command normally updates a file's timestamp to the current date and time
+        without otherwise modifying it. This is useful for creating empty files, which can be used for
+        practice, because "touching" a file name that does not exist causes the file to be created
+        
+            $ touch myfile.txt   <--- creates a empty file
+
+    + remove
+       
+         $ rm myfile.txt         <--- remove the file
+
+         $ rm -r myfolder        <--- remove myfolder and all files contained
+                                      [ r: recursive ]
+
+         $ rm -rf myfolder       <--- remove folder + contains without asking confirmation
+                                      [ f: force ]
+
+        
+[ ] Text file editing
+
+    + Vi editor original (viene preinstalado en RHEL)
+
+    + Vim editor mejorado
+
+    + Hermosisisisimo tutorial "on-line"
+
+    + Vim operating modes:
+         [ i ]   insert mode: write text like in any other text editor
+         [ esc ] normal mode: efficient way to navigate 
+
+    + Para desplazarse NO se usan las teclas "arrow" sino:
+             
+             ^
+             k
+        < h     l > 
+             j
+             v
+
+         W : start of the NEXT word (ir hacia "adelante")
+         B : beginning of the word (retroceder 1 palabra)
+         E : end of the word (ir hacia "adelante")
+
+    + En modo COMMAND se hacen MILES de cosas interesantes....
+         3 + W : se mueve 3 veces (palabras) "hacia adelante"
+
+         f : buscar un caracter.
+             Ejemplo " f + o" busca la siguiente "o"
+
+         y : copiar la linea donde uno este posicionado
+
+         p : paste lo que se tenga en el buffer
+
+         d : borrar la linea donde uno este posicionado
+
+
+    + Salir sin guardar cambios
+         :q!  [ENTER]
+
+    + Guardar cambios
+         :w   [ENTER]
+
+    + Guardar y salir
+         :x    [ENTER]
+
+    + View Mode { V }
+         Permite editar en modo "visual"...
+         Por ejemplo seleccionar bloques de texto en columnas..!!!
+
+         Visual mode is a great way to highlight and manipulate text. 
+
+         There are three keystrokes:
+           - Character mode: v
+           -      Line mode: Shift+v
+           -     Block mode: Ctrl+v
+         
+         Character mode highlights sentences in a block of text. 
+
+         The word VISUAL will appear at the bottom of the screen. 
+
+         Press v to enter visual character mode. 
+
+         Shift+v enters line mode. 
+         (VISUAL LINE will appear at the bottom of the screen).
+
+         Visual block mode is perfect for manipulating data files. 
+
+         From the cursor, press the Ctrl+v to enter visual block. 
+         (VISUAL BLOCK will appear at the bottom of the screen). 
+
+         Use the arrow keys to highlight the section to change.
+
+    + Copy / paste
+
+        In Vim, copy and paste is known as yank and put, using command 
+        characters y and p. 
+
+        Begin by positioning the cursor on the first character to be 
+        selected, and then enter visual mode. 
+
+        Use the arrow keys to expand the visual selection. When ready, 
+        press y to yank the selection into memory.
+
+        Position the cursor at the new location, and then press p to
+        put the selection at the cursor.
+
+   + Para instalar VIM
+
+        $ sudo yum -y install vim-enhanced
+
+
+   + Para ver el tutorial de VIM
+
+        $ vimtutor [ENTER]
+
+
+*******************************************************************
+
+[ ] Usuarios
+
+    + Conceptos
+         There are three main types of user account: the superuser, system users, and regular users.
+         • The superuser account is for administration of the system. The name of the superuser is root
+         and the account has UID 0. The superuser has full access to the system.
+         • The system has system user accounts which are used by processes that provide supporting
+         services. These processes, or daemons, usually do not need to run as the superuser. They are
+         assiged non-privileged accounts that allow them to secure their files and other resources from
+         each other and from regular users on the system. Users do not interactively log in using a system
+         user account.
+         • Most users have regular user accounts which they use for their day-to-day work. Like system
+         users, regular users have limited access to the system.
+         You can use the id command to show information about the currently logged-in user
+
+    + Cuando se crea un usuario regular, automáticamente se crea
+      también un GRUPO con el mismo nombre del usuario !!!!     <---- ojo
+         El usuario tiene una secuencia: UID
+         El grupo tiene una secuencia: GID
+
+    + By default, systems use the /etc/passwd file to store information 
+      about local users.
+
+      Each line in the /etc/passwd file contains information about one user.
+      It is divided up into seven colon-separated fields.
+ 
+    + UID ranges
+                 0 : root
+           1 - 200 : reserved for system users
+         201 - 999 : system users assigned by their own apps and processes
+        1000 - n   : regular users
+
+    + Para cambiar de usuario
+
+        $ su usuarioxxx  [ENTER]        * su : Switch User
+          Password: *
+        
+          Cuando el usuario root ejecuta $ su userxxx, no se
+          pide el password de ese usuario
+
+        Cuando NO se especifica el usuario, bash trata de 
+        cambiar hacia el usuario ROOT (by default)
+
+            $ su   [enter]
+            $ su - [enter]
+    
+        Peludez total: (no entendi)
+           The command SU starts a non-login shell, while the
+           command su - (with the dash option) starts a login
+           shell. 
+
+           The main distinction between the two commands is that 
+           SU - sets up the shell environment as if it were a new 
+           login as that user, while SU just starts a shell as that
+           user, but uses the original user's environment settings
+           (what a fuck....!)
+
+           La recomendacion es usar siempre SU -r
+        
+        $ sudo su -           : inicia nueva session, con contexto root
+
+         
+    + Comandos
+        $ i            [ENTER]    * muestra info del logged user
+        
+        $ id [userxxx] [ENTER]    * muestra info del usuario indicado
+     
+        $ ls -l filexxx           * muestra el usuario que creo el archivo
+
+        $ ps -au                  * muestra usuario de cada proceso
+
+        $ cat /etc/passwd         * muestra info vital de cada usuario
+
+        $ cat /etc/group          * muestra info vital de cada GRUPO
+
+    + Crear usuarios
+
+        a. Primero se crea la cuenta de usuario
+             $ adduser usuario_xxx
+        b. Luego se le asigna el password
+             $ passwd usuario_xxx
+
+    + useradd {username}
+
+      The useradd username command creates a new user named username. 
+      It sets up the user's home directory and account information, and
+      creates a private group for the user named username. 
+      At this point the account does NOT have a valid password set, 
+      and the user cannot log in until a password is set.
+    
+        $ passwd user01 [ENTER]
+
+    + crear usuario y grupo en un solo paso
+
+        $ sudo useradd -G group_name user_name
+
+    + usermod {username}
+
+    + userdel {username}
+
+        userdel username    : removes the details of username
+                              from /etc/passwd, but leaves the 
+                              user's home directory intact.
+
+        userdel -r username : command removes the details of 
+                              username from /etc/passwd and also
+                              deletes the user's home directory.
+
+    + Some defaults, such as the range of valid UID numbers and default
+      password aging rules, are read from the /etc/login.defs file. 
+
+      Values in this file are only used when creating new users.
+      A change to this file does not affect existing users.
+
+    + WARNING (mega huecote de seguridad !!!)
+      Cuando se borra un usuario sin usar -r, puede pasar que
+      el UID sea reutilizado por el sistema al crear un nuevo
+      usuario (what a fuck !!!)
+
+      Ver nota en pagina 105 en RH066X.pdf (RHEL8)
+
+[ ] Groups
+
+    + Every user has exactly one PRIMARY group. 
+      For local users, this is the group listed by GID number in
+      the /etc/passwd file. By default, this is the group that will
+      own new files created by the user.
+
+      Normally, when you create a new regular user, a new group with
+      the same name as that user is created. That group is used as the
+      primary group for the new user, and that user is the only member 
+      of this User Private Group. It turns out that this helps make 
+      management of file permissions simpler, which will be discussed 
+      later in this course.
+      
+      Users may also have supplementary groups. Membership in 
+      supplementary groups is determined by the /etc/group file.
+
+      Users are granted access to files based on whether any of their
+      groups have access. 
+
+      It doesn't matter if the group or groups that have access are 
+      primary or supplementary for the user
+
+
+    + Se ubican en
+          /etc/groups
+
+          group01:x:1000:user01,user02,user03
+
+                x: obsoleto (era el password)
+             1000: GUID 
+           userNN: lista de usuarios que pertenece al grupo
+
+    + Crear grupos
+
+         GUID ranges: 
+            0 - 999 reserved for system groups
+
+    + Comandos
+
+         $ sudo groupadd -r groupxxxx     : automatic GUID number
+
+         $ sudo groupadd -g 10000 groupxxx
+
+         $ sudo groupmod -n groupxxx groupyyy     : rename xxx to yyy
+         
+         $ sudo groupmod -g 20000 groupyyy        : cambiar numero GUID
+
+         $ sudo groupdel groupyyy                 : ver otras indicaciones
+
+    + Agregar usuarios a un grupo
+
+         $ sudo usermod -ag group_xxx user_yyy    : As a primary members
+         $ sudo usermod -aG group_xxx user_yyy    : As a secondary members
+
+    + Caso de uso completo
+
+        a. Crear un grupo llamado ATEAM y crear dos usuarios y asociarlos 
+           a dicho grupo
+
+            $ sudo su -
+            # groupadd ateam
+            # useradd -G ateam andy
+            # useradd -G ateam alice
+
+        b. Revisar
+
+            # tail /etc/passwd
+            # tail /etc/group
+
+            # id andy
+            # id alice
+
+        c. Crear un directorio y cambiar el OWNER
+
+            # mkdir /home/ateam-text
+
+            # ls -al /home/ateam-text
+
+            # chown :ateam /home/ateam-text        [ los dos puntos ":" implican GRUPO ]
+
+
+    + Para revisar
+
+         $ tail -n 5 /etc/groups
+         $ id userxxxx
+
+[ ] Cosas nivel hacker
+
+    + Hay permisos especiales, muy requetepludos
+
+        u+s (suid)  File executes as the OWNER not the 
+                    current user
+
+        g+s (sgid)  File executes as the Group OWNER not the
+                    current user
+
+        o+t (sticky) Users with WRITE permissions to the folder
+                     can only remove files created by them
+                     (cannot remove others user's files)
+
+        $ ls -ld /tmp
+
+      Para establecer estos permisos avanzados:
+                      Symb  Numb
+             setuid = u+s   4nnn
+             setgid = g+s   2nnn
+             sticky = o+t   1nnn
+
+          $ chmod g+s  folderxxx
+          $ chmod 2000 folderxxx
+
+    + Ver pagina 135 del RH066X pdf
+
+    +
+
+*************************************************************************      
+
+[ ] File system permissions
+
+    + Permission categories
+        - U: File Owner
+        - G: Group Owner (group associated with the file ownership)
+        - O: Other (everyone else)
+
+    + Effective permissions
+        - R:ead
+        - W:rite  (create, delete)
+        - X:execute
+
+    + Tips
+         - It's not uncommon to have both R,X permissions in
+           directories (to allow entering and enumarting folder
+           contents)
+
+         - The most specific permissions take precedence. 
+           (user permissions override group permissions,
+           which override other permissions)
+
+         - Leer nota de pagina 121 del RHEL RH066X pdf
+           
+           (NTFS permissions are quite differente than Linux)
+
+           Permissions on a directory are not inherited 
+           automatically by the subdirectories and files 
+           within it
+
+    + Entendiendo algunas cosas cripticas
+
+      a. Estructura de los permisos
+
+         [database1@host dir]$ ls -la
+
+            drwxrwxr-x. 2 database1 consultant1 4096 Apr 4 10:23 .
+            drwxr-xr-x. 10 root root 4096 Apr 1 17:34 ..
+            -rw-rw-r--. 1 operator1 operator1 1024 Apr 4 11:02 lfile1
+            -rw-r--rw-. 1 operator1 consultant1 3144 Apr 4 11:02 lfile2
+             
+            Los primeros 10 caracteres son los permisos:
+              1: tipo  [ D:folder -:file l:soft link ]
+              2: xyz   [ user owner permissions ]  
+              3: xyz   [ group owner permissions ]
+              4: xyz   [ others's group permissions ]
+
+                 xyz = rwx (si no hay permiso, aparece '-' )
+             
+            Luego aparece el nombre de 
+               1. user owner
+               2. group owner
+
+            La pagina 123 muestra cosas en apariencia simples, pero
+            que no se entienden "a la primera"
+
+      b. Cuando haya multiples permisos aplicables a un mismo
+         objeto, se aplica el permiso mas especifico
+
+
+    + Comandos
+
+        ls : list
+
+        $ ls -l               : -l long format (tabular)
+
+    + Cambiar permisos
+        
+         chmod   : se pronuncia chEmmOOd
+
+         a. Se le llama "mode" al grupo de permisos de un archivo,
+            entonces el comando chmod (change mode) significa cambiar
+            los permisos a un archivo
+
+         b. chmod es de los comando que mas me gustan :)
+
+         c. Symbolic method  (using characters)
+
+               chmod WhoWhatWhich file|directory
+
+                    Who: u, g, o, a  [ user, group, others, all ]
+                   What: +, -, =     [ + add, - remove, = replace all set of permissions ]
+                  Which: r, w, x     [ read, write, execute ]
+            Ejemplos
+                $ chmod go-rw file1.txt    [ remove RW for group and others on file1.txt ]
+                $ chmod a+x file2.txt      [ add EXECUTE permisos for all users and groups on file2.txt ]
+
+         d. Numeric method
+              Uses and OCTAL representation for the settings to apply
+
+                     U      G      O
+                   r w x  r w x  r w x 
+                   -----  -----  -----
+                   r w -  - - x  - w -    <--- Symbolic view
+                   1 1 0  0 0 1  0 1 0     
+                     
+                     6      1      2      <--- Octal value
+
+              Table
+                 Octal  Binary    Symbolic
+                   0     000        ---
+                   1     001        --x
+                   2     010        -w-
+                   3     011        -wx
+                   4     100        r--
+                   5     101        r-x
+                   6     110        rw-
+                   7     111        rwx
+
+
+              Ejemplos
+                $ chmod  u=rwx,g=rx,o=r file1.txt
+                $ chmod  754            file1.txt   (identical results)
+                
+                $ chmod -R 700 dirname            : Set RWX permissions to the folder owner, 
+                                                    and remove permissions for Group and Others,
+                                                    recursively to the folder
+
+                $ chmod -R 701 dirname            : Set RWX permissions to the folder owner,
+                                                    Remove permissions for Group
+                                                    Set X permissions to the Others  
+   
+                $ chmod o=rw  file1.txt       : keep existing U and G permissions, assign only RW to Others
+                $ chmod o=rw- file1.txt       : keep existing U and G permissions, assign only RW to Others
+                
+                $ chmod o=r   file1.txt       : keep existing U and G permissions, assign only R  to Others
+                $ chmod o=r-- file1.txt       : keep existing U and G permissions, assign only R  to Others
+
+[ ] Cosa nivel "hacker"
+
+    + umask
+
+      When you create a new file or directory, it is assigned initial permissions. 
+      There are two things that affect these initial permissions. The first is whether 
+      you are creating a regular file or a directory.
+      The second is the current umask.
+      
+      If you create a new FOLDER, the operating system assignes it octal 0777 (drwxrwxrwx). 
+
+      If you create a new FILE,   the operating system assignes it octal 0666 (-rw-rw-rw-). 
+
+      You always have to explicitly add execute permission to a regular file. 
+
+      The umask command without arguments will display the current value of the 
+      shell's umask:
+        
+        $ umask
+
+      Use the umask command with a single numeric argument to change the umask of the 
+      current shell. 
+
+      The numeric argument should be an octal value corresponding to the new umask value. 
+      You can omit any leading zeros in the umask.
+      The system's default umask values for Bash shell users are defined in the 
+         /etc/profile 
+         /etc/bashrc 
+
+           $ echo "umask 007" >> ~/.bashrc 
+
+           $ cat ~/.bashrc
+
+      Users can override the system defaults in the .bash_profile and .bashrc
+      files in their home directories.
+
+      As a root user, se puede crear un shell script que ejecute at startup
+
+           /etc/profile.d/local-umask.sh
+
+      Ejemplos
+
+          umask = 0002  : los ceros significa que los permisos quedan intactos
+                          el numero dos significa asignar permisos R-- en Others
+ 
+[ ] Change Group and User Owner for folders and files
+
+       chown : se pronuncia choooun
+
+    + 
+    + 
+    + 
+
+*********************************************
+
+[ ] Memory utilization
+
+    $ top
+
+    $ free -m
+
+    $ cat /proc/meminfo           * OJO que meminfo es un archivo VIRTUAL (no fisico)
+
+    $ vmstat -s
+
+    $ htop
+
+    + Para instalar Htop:
+         $ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+         $ sudo yum update
+
+         $ yum search 'htop'
+
+         $ 
+
+
+*********************************************************
+
+
+[ ] Cosas de seguridad
+    + Por default passwords tienen que cumplir con una
+      politica preconfigurada
+        - mas de 8 caracteres
+        - no pueden ser de diccionario (admin, password, hello, etc)
+        - 
+    
+    + 
+
+    + 
+
+
+
+********************************************************
+
+[ ] RPM redhat package management
+ 
+    + Referencia
+         https://www.thegeekdiary.com/beginners-guide-to-linux-software-management-with-rpm/
+
+    + El principio
+
+         The RPM Package Manager, originally developed by 
+         Red Hat, provides a standard way to package
+         software for distribution. 
+
+         Managing software in the form of RPM packages is
+         much simpler than working with software that has 
+         simply been extracted into a file system from an 
+         archive. 
+
+         It lets administrators track which files were 
+         installed by the software package and which ones 
+         need to be removed if it is uninstalled, and check 
+         to ensure that supporting packages are present when 
+         it is installed. 
+
+         Information about installed packages is stored in 
+         a local RPM database on each system.
+         
+         All software provided by Red Hat for Red Hat Enterprise 
+         Linux is provided as an RPM package.
+         
+    + RPM package files names consist of four elements (plus the .rpm suffix): 
+
+              name-version-release.architecture:
+
+      Ejemplo:
+              coreutils-8.30-4.el8.x86_64.rpm
+              --------- ---- ----- ------
+              name       ver   rel  arch
+
+            release: generated by the package manager (not the author)
+               arch: "no-arch" software can runs in any architecture
+
+     + Only the package name is required for installing packages 
+       from repositories. 
+       
+       If multiple versions exist, the package with the higher 
+       version number is installed.
+
+       If multiple releases of a single version exist, the package 
+       with the higher release number is installed.
+
+     + Package is made of three components
+         - Metadata: Package contents description, pre-requisites,
+           change log, etc
+         - Files to be installed
+         - Scripts that run when the package is installed
+
+     + Package signature
+         Typically, software providers digitally sign RPM packages 
+         using GPG keys
+         (Red Hat digitally signs all packages it releases). 
+         
+         The RPM system verifies package integrity by confirming 
+         that the package was signed by the appropriate GPG key. 
+
+         The RPM system refuses to install a package if the GPG 
+         signature does not match.
+
+     + Software updates
+
+         Red Hat generates a complete RPM package to update software. 
+
+         An administrator installing that package gets only the most 
+         recent version of the package. 
+
+         Red Hat does not require that older packages be installed 
+         and then patched. 
+
+         To update software, RPM removes the older version of the 
+         package and installs the new version. 
+
+         Updates usually retain configuration files, but the packager 
+         of the new version defines the exact behavior.
+         
+         In most cases, only one version or release of a package may be installed 
+         at a time. However, if a package is built so that there are no conflicting 
+         file names, then multiple versions may be installed.
+
+         The most important example of this is the kernel package. Since a new 
+         kernel can only be tested by booting to that kernel, the package is 
+         specifically designed so that multiple versions may be installed at once. 
+
+         If the new kernel fails to boot, the old kernel is still available and 
+         bootable.
+
+     + RPM commands
+
+         $ sudo rpm -ivh {filename_xxx}       : Install the package
+         $ sudo rpm -Uvh {filename_xxx}       : Upgrade the package
+         $ sudo rpm -ev {filename_xxx}        : Erase / remove package
+
+         $ sudo rpm -qa                       : List installed packages
+
+
+     + Mi resumen mental...
+
+         RPM es demasiado especifico a cosas del sistema operativo
+         mientras que YUM es mucho mas general y es quien realmente
+         permite agregar mas software al sistema, por ejemplo instalar
+         git o un editor de texto, etc
+
+[  ] YUM yellowdog updated modifier
+
+     + The low-level rpm command can be used to install packages, but it is not 
+       designed to work with package repositories or resolve dependencies from 
+       multiple sources automatically.
+
+       Yum is designed to be a better system for managing RPM-based software 
+       installation and updates. 
+
+       The yum command allows you to install, update, remove, and get information 
+       about software packages and their dependencies. 
+
+       You can get a history of transactions performed and work with multiple 
+       Red Hat and third-party software repositories.
+
+     + Truco
+          yum se comporta diferente en RHEL 7+ o en RHEL 6
+
+     + YUM trabaja en un nivel superior que RPM y puede ejecutar tareas de rpm
+
+     + YUM permite
+         - buscar software para LINUX en repositorios disponibles across 
+           the planet
+         - buscar software instalado en la computadora
+         - 
+ 
+     + YUM group 
+        - collections of related software installed together
+          for a particular purpose
+        - group types
+          Regular groups: collection of packages
+          Environment groups: collections of regular groups
+        - Package conditions inside the group
+          mandatory : install package when group is installed
+          default   : normally installed if the group is installed
+          optional  : only installed when specifically indicated
+
+     + Comandos
+          $ yum help
+
+          $ sudo yum list 'http*' | less
+
+          $ sudo yum search 'curl'
+          $ sudo yum search all 'curl'
+
+          $ sudo yum info 'curl'
+          $ sudo yum info 'httpd'
+
+          $ sudo yum provides '/var/www/html'   <--- Muestra packages instalados en ese folder
+
+          $ sudo yum install 'httpd'
+          $ sudo yum update 'httpd'
+          $ sudo yum remove 'httpd'
+
+          $ sudo yum group list
+          $ sudo yum group info
+          $ sudo yum group install 'RPM Development Tools'
+
+     + Para ver resultados de yum
+
+          $ tail -5 /var/log/dnf.rpm.log
+
+          $ sudo yum history
+          $ sudo yum history info 5    <--- 5 es el ID de la tarea dentro del history
+          $ sudo yum history undo 5    <--- 5 es el ID de la tarea dentro del history
+
+     + Para que yum actualice los paquetes instalados
+
+          $ sudo yum update [ENTER]
+
+------
+
+
+**************************************************
+
+[ ] grep
+ 
+    + References
+
+        https://www.loggly.com/ultimate-guide/analyzing-linux-logs/
+        
+    + Examples
+
+        $ grep "user hoover" /var/log/auth.log
+
+            pam_unix(sshd:session): session opened for user hoover by (uid=0)
+            pam_unix(sshd:session): session closed for user hoover
+
+        $ grep -P "(?<=port\s)4792" /var/log/auth.log
+
+              Accepted password for hoover from 10.0.2.2 port 4792 ssh2  
+
+        $ grep "4792" /var/log/auth.log
+
+              Accepted password for hoover from 10.0.2.2 port 4792 ssh2
+              74.91.21.46 - - [06/Jun/2019:19:44:32 +0000] "GET /scripts/samples/search?q=4792HTTP/1.1" 
+
+
+
+fin.
