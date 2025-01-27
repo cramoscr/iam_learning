@@ -1,9 +1,13 @@
 Git_Notas (oct-2022).txt
 --------------------
-Updated: cramos 14/oct/2022
+Updated: cramos 27/jan/2025
 
 [ ] Referencia
     + Tutorial: https://learngitbranching.js.org/?locale=es_AR
+    + Personal Access Tokens (classig)
+         Github.com
+            Settings / Developer Setings / Personal Access Tockens
+              Tokens (classic) : Generate
 
 [ ] Para empezar....
       
