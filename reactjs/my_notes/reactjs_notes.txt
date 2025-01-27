@@ -1,32 +1,6 @@
 reactjs_notes.txt 
 -------------
-Updated: cramos 27/jan/2025
-
-[ ] My AWS environment [ how to run ]
-    updated: 27/jan/2025
-
-    + Starting the EC2 instance
-        - For my ReactJS labs its good enough to connect  using the web
-          browser based client:
-               "Connect using EC2 Instance Connect"
-
-        - Every time you run the instance, it will get a new public IP address
-          so, write it down !
-
-        - It has a security group which allows HTTP/HTTPS inbound connections from any
-
-    + Running a basic ReactJS for testing purposes
-
-        - enter into the AWS console
-             $ cd my_repo/reactjs/_projects/pcatalog
-             $ npm start
-
-        + Open new Chrome tab and enter 
-
-             http://[aws_public_ip_address]:3000    [ ENTER ]
- 
-           { this worked on 27/ene/2025 }
- 
+Updated: cramos 03/jun/2023
 
 [ ] There is almost nothing here....
     

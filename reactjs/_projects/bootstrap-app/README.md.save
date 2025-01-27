@@ -1,4 +1,5 @@
 # React's - Bootstrap example
+
 # Updated: cramos 27/ene/2025
 
 A simple react's app showcasing some React-Bootstrap components!
@@ -16,4 +17,6 @@ How to run:
 
      From Chrome web browser, 
          enter the public EC2 instance IP address:300 [ENTER]
+
+- end line -
 
