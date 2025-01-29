@@ -1,4 +1,8 @@
-export default function ProductCard({ product, addToCart }) {
+import { useCart } from '../context/CartContext';
+
+export default function ProductCard({ product }) {
+  const { addToCart } = useCart();
+  
   return (
     <div className="border rounded-lg p-4 shadow-md">
        <img src={product.image} alt={product.name} className="w-full h40 object-cover rounded-md" />
